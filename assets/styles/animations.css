@@ -1,0 +1,125 @@
+/* Nav Link underline Animation */
+.underline_animation {
+  position: relative;
+  width: fit-content;
+}
+.underline-animation-enter,
+.underline-animation-leave {
+  position: relative;
+  width: fit-content;
+}
+.underline-animation-enter::after,
+.underline-animation-leave::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+.underline-animation-enter::after {
+  animation: underline_animation_enter 0.3s ease-in-out forwards;
+}
+.underline-animation-leave::after {
+  animation: underline_animation_leave 0.3s ease-in-out forwards;
+}
+@keyframes underline_animation_enter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes underline_animation_leave {
+  from {
+    width: 100%;
+    left: 0;
+  }
+  to {
+    width: 0;
+    left: 100%;
+  }
+}
+
+/* character animations */
+/* liquid flow */
+
+.liquid_button-enter::before,
+.liquid_button-leave::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  transform: scale(2);
+  z-index: -1;
+  background: var(--color-spark) !important;
+  border-radius: var(--infinity-px);
+}
+
+.liquid_button-enter::before {
+  width: 0;
+  animation: liquid_button_enter 0.3s ease-in-out forwards;
+}
+.liquid_button-leave::before {
+  width: 100%;
+  animation: liquid_button_leave 0.3s ease-in-out forwards;
+}
+
+.liquid_button-enter > span,
+.liquid_button-leave > span{
+    transition: color 100ms;
+    transition-delay: calc(var(--index) * 200ms);
+}
+.liquid_button-enter > span{
+    color: var(--color-primary);
+}
+.liquid_button-leave > span{
+    color: var(--color-spark);
+}
+
+@keyframes liquid_button_enter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes liquid_button_leave {
+  from {
+    width: 100%;
+    left: 0;
+  }
+  to {
+    width: 0;
+    left: calc(100%);
+  }
+}
+
+
+/* characters */
+.character-animation-enter {
+  position: relative;
+  width: fit-content;
+  isolation: isolate;
+}
+.character-animation-enter > span {
+  position: relative;
+  animation: liquidFlowEnter 100ms ease forwards;
+  animation-delay: calc(var(--index) * 25ms);
+}
+@keyframes liquidFlowEnter {
+  0% {
+    top: 0.25rem;
+  }
+  50% {
+    top: -0.25rem;
+  }
+  100% {
+    top: 0rem;
+  }
+}

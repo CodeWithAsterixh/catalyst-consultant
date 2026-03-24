@@ -1,0 +1,48 @@
+.liquid_button {
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+  display: inline-block;
+  isolation: isolate;
+  background: var(--color-primary);
+  color: var(--color-spark);
+  padding-block: calc(var(--spacing) * 3);
+  padding-inline: calc(var(--spacing) * 5);
+  border-radius: var(--infinity-px);
+  font-weight: bold;
+}
+
+@media (width < 48rem) {
+  #navigation_menu {
+    top: calc(-100dvh);
+    left: 0;
+    transition-duration: 500ms;
+  }
+  #navigation_menu.navigation-menu-shown {
+    top: 0;
+  }
+  #navigation_menu.navigation-menu-hidden {
+    top: calc(-100dvh);
+  }
+  .nav_menu_closed > span {
+    transform: rotate(0deg) translateY(0) translateY(0);
+    opacity: 1;
+  }
+  .nav_menu_opened > span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px) translateX(5px);
+  }
+  .nav_menu_opened > span:nth-child(2) {
+    transform: translateX(-11px);
+    opacity: 0;
+  }
+  .nav_menu_opened > span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-5px) translateX(4px);
+  }
+}
+
+.container-padding {
+  padding: calc(var(--spacing) * 5);
+}
+.hero-image-container{
+    width: 100%;
+}

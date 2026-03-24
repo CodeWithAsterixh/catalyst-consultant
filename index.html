@@ -1,0 +1,505 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./assets/styles/root.css" />
+  </head>
+  <body>
+    <!--Header-->
+    <header
+      class="sticky top-0 z-9999 isolate w-full bg-(--color-secondary) container-padding flex items-center justify-between"
+    >
+      <!--logo-->
+      <span class="flex items-center justify-center gap-2 w-fit z-10">
+        <img src="assets/media-assets/Logo.svg" class="size-7 lg:size-8" />
+        <h1 class="text-2xl md:text-sm lg:text-2xl font-bold">
+          Catalyst Advisor
+        </h1>
+      </span>
+      <!--nav-->
+      <div
+        data-trigger-receiver-id="navigation_menu"
+        id="navigation_menu"
+        class="w-full h-screen fixed top-0 left-0 md:bg-linear-to-b md:from-transparent md:to-transparent flex items-center justify-center md:justify-end gap-4 container-padding md:gap-0 flex-col md:flex-row md:absolute md:h-full"
+      >
+        <!-- nav control for mobile -->
+        <button
+          data-toggle-animation="dynamic_toggle"
+          data-animation-variables="{trigger_showClass:'navigation-menu-shown bg-linear-to-b from-(--color-secondary) to-(--color-background)', trigger_removeClass:'navigation-menu-hidden bg-linear-to-b from-(--color-background) to-(--color-secondary)', enterClass: 'nav_menu_opened', leaveClass: 'nav_menu_closed', trigger_receiver: 'navigation_menu'}"
+          class="flex *:duration-500 size-7 flex-col fixed md:hidden top-4 right-4 gap-1 *:w-7 *:h-1 *:bg-(--color-foreground)"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav>
+          <ul
+            class="header-nav flex flex-col items-center *:text-xl md:*:text-sm lg:*:text-base md:flex-row gap-4 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2"
+          >
+            <li>
+              <a
+                href="#"
+                class="font-medium text-(--color-primary)"
+                data-hover-animation="underline_animation"
+                >Service</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-medium text-(--color-primary)"
+                data-hover-animation="underline_animation"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-medium text-(--color-primary)"
+                data-hover-animation="underline_animation"
+                >Resources</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-medium text-(--color-primary)"
+                data-hover-animation="underline_animation"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-medium text-(--color-primary)"
+                data-hover-animation="underline_animation"
+                >FAQ</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <!--cta-->
+        <button
+          class="liquid_button text-xl md:text-sm lg:text-lg"
+          data-hover-animation="character_animation, dynamic_toggle"
+          data-animation-variables="{text:'Book a consultation', variant:'char', enterClass: 'liquid_button-enter', leaveClass: 'liquid_button-leave'}"
+        >
+          Book a consultation
+        </button>
+      </div>
+    </header>
+
+    <!-- hero -->
+    <section
+      id="hero"
+      class="w-full h-fit container-padding grid gap-5 md:gap-0 md:grid-cols-[3fr_2fr]"
+    >
+      <!-- writeup -->
+      <article class="flex flex-col gap-8 h-full justify-center">
+        <div class="w-full flex flex-col gap-6">
+          <h1
+            class="text-4xl sm:text-6xl md:text-4xl lg:text-6xl leading-tight font-bold"
+          >
+            Unlock Your Business Potential with Expert Consulting
+          </h1>
+          <p
+            class="text-lg sm:text-2xl md:text-lg lg:text-2xl max-w-5/6 text-(--color-secondary-foreground)"
+          >
+            Tailored strategies to elevate your business and drive growth
+          </p>
+        </div>
+        <div class="w-full flex flex-col gap-6">
+          <button
+            class="liquid_button text-xl md:text-sm lg:text-lg"
+            data-hover-animation="character_animation, dynamic_toggle"
+            data-animation-variables="{text:'Book a consultation', variant:'char', enterClass: 'liquid_button-enter', leaveClass: 'liquid_button-leave'}"
+          >
+            Book a consultation
+          </button>
+          <p
+            class="text-sm lg:text-lg text-(--color-secondary-foreground) flex items-center justify-start gap-2"
+          >
+            <img
+              src="./assets/media-assets/GiftIcon.svg"
+              alt="gift-icon"
+              class="size-4 lg:size-6"
+            />
+            Helping 200+ companies achieve their business goals.
+          </p>
+        </div>
+      </article>
+      <!-- illustration -->
+      <article>
+        <div
+          class="relative isolate w-full h-full bg-(--color-secondary) rounded-4xl"
+        >
+          <!-- ceo image -->
+          <span
+            class="size-full scale-95 md:scale-100 isolate z-1 block -skew-5 overflow-hidden rounded-4xl"
+          >
+            <img
+              src="./assets/media-assets/ceo-image.jpg"
+              alt="Ceo image sitting with pc"
+              class="size-full object-cover max-h-[70vh] scale-110 skew-5"
+            />
+            <div
+              class="absolute z-0 bottom-0 right-0 h-32 w-60 bg-(--color-background) blur-xl rounded-l-[50%]"
+            ></div>
+          </span>
+
+          <!-- stats -->
+          <ul
+            class="absolute z-2 flex flex-col gap-2 bottom-10 md:-left-10 lg:-left-20"
+          >
+            <li
+              class="min-w-32 lg:min-w-40 px-4 py-1 flex flex-col bg-(--color-secondary) text-(--color-secondary-foreground) rounded-r-lg md:rounded-lg"
+            >
+              <h3 class="text-4xl font-bold">80%</h3>
+              <p class="text-sm">Success Rate</p>
+            </li>
+            <li
+              class="min-w-32 lg:min-w-40 px-4 py-1 flex flex-col bg-(--color-secondary) text-(--color-secondary-foreground) rounded-r-lg md:rounded-lg"
+            >
+              <h3 class="text-4xl font-bold">500+</h3>
+              <p class="text-sm">Satisfaction Clients</p>
+            </li>
+          </ul>
+          <!-- CEO name -->
+          <span class="flex z-3 flex-col absolute bottom-12 right-4">
+            <h3 class="text-xl lg:text-3xl font-bold">Handerson Lee</h3>
+            <p class="text-xs lg:text-sm">CEO of catalyst advisor</p>
+          </span>
+        </div>
+      </article>
+    </section>
+    <!-- companies banner -->
+    <section id="companies-banner" class="w-full overflow-hidden py-24">
+      <ul class="max-w-[80%] flex gap-6 items-center justify-center mx-auto">
+        <li class="shrink-0 md:shrink">
+          <img
+            src="./assets/media-assets/Logo-demo-componies-1.png"
+            alt="sample company logo"
+            class="h-6 lg:h-10 object-contain"
+          />
+        </li>
+        <li class="shrink-0 md:shrink">
+          <img
+            src="./assets/media-assets/Logo-demo-componies-2.png"
+            alt="sample company logo"
+            class="h-6 lg:h-10 object-contain"
+          />
+        </li>
+        <li class="shrink-0 md:shrink">
+          <img
+            src="./assets/media-assets/Logo-demo-componies-3.png"
+            alt="sample company logo"
+            class="h-6 lg:h-10 object-contain"
+          />
+        </li>
+        <li class="shrink-0 md:shrink">
+          <img
+            src="./assets/media-assets/Logo-demo-componies-4.png"
+            alt="sample company logo"
+            class="h-6 lg:h-10 object-contain"
+          />
+        </li>
+        <li class="shrink-0 md:shrink">
+          <img
+            src="./assets/media-assets/Logo-demo-componies-5.png"
+            alt="sample company logo"
+            class="h-6 lg:h-10 object-contain"
+          />
+        </li>
+        <li class="shrink-0 md:shrink">
+          <img
+            src="./assets/media-assets/Logo-demo-componies-6.png"
+            alt="sample company logo"
+            class="h-6 lg:h-10 object-contain"
+          />
+        </li>
+        <li class="shrink-0 md:shrink">
+          <img
+            src="./assets/media-assets/Logo-demo-componies-7.png"
+            alt="sample company logo"
+            class="h-6 lg:h-10 object-contain"
+          />
+        </li>
+      </ul>
+    </section>
+
+    <section
+      id="who_we_are"
+      class="container-padding py-24! bg-(--color-primary)"
+    >
+      <h2 class="text-(--color-background)">Who we are?</h2>
+      <p class="text-(--color-primary-foreground) text-xl md:max-w-1/2">
+        we are driven by a passion for helping businesses thrive. With decades
+        of experience and a commitment to excellence, our team is ready to guide
+        you through every challenge.
+      </p>
+    </section>
+
+    <section
+      id="solutions"
+      class="container-padding py-24! flex flex-col gap-10"
+    >
+      <div class="w-fit md:max-w-3/7 flex flex-col gap-10">
+        <h1 class="text-4xl">Tailored Solutions for Every Challenge</h1>
+        <p class="text-xl text-(--color-secondary-foreground)">
+          We provide custom solutions that address your specific business needs.
+          From strategy to execution, we focus on delivering measurable results.
+        </p>
+      </div>
+      <ul
+        class="grid grid-cols-3 *:min-h-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
+      >
+        <li
+          class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3 items-center justify-between"
+        >
+          <div class="w-full flex flex-col gap-3">
+            <h3 class="text-xl font-bold">Business Strategy</h3>
+            <p>
+              We craft data-driven strategies that help you reach your goals and
+              drive sustainable growth.
+            </p>
+          </div>
+          <img
+            src="./assets/media-assets/illustration-graphs-1.svg"
+            alt="illustration-graphs-1"
+            class="size-full object-contain"
+          />
+        </li>
+        <li class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3">
+          <div class="w-full flex flex-col gap-3">
+            <h3 class="text-xl font-bold">Operational Efficiency</h3>
+            <p>
+              We streamline processes to increase productivity and reduce costs,
+              ensuring smoother operations.
+            </p>
+          </div>
+
+          <img
+            src="./assets/media-assets/illustration-graphs-2.svg"
+            alt="illustration-graphs-2"
+            class="size-full object-contain"
+          />
+        </li>
+        <li class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3">
+          <div class="w-full flex flex-col gap-3">
+            <h3 class="text-xl font-bold">Market Expansion</h3>
+            <p>
+              We help you enter new markets with a well-researched approach that
+              sets you up for success.
+            </p>
+          </div>
+
+          <img
+            src="./assets/media-assets/illustration-graphs-3.svg"
+            alt="illustration-graphs-3"
+            class="size-full object-contain"
+          />
+        </li>
+      </ul>
+    </section>
+    <section
+      id="solutions"
+      class="container-padding py-24! flex flex-col gap-10"
+    >
+      <div class="w-fit md:max-w-5/7 flex flex-col gap-10">
+        <p class="text-4xl">
+          Our team of seasoned professionals is dedicated to helping you achieve
+          your business goals. With expertise across various fields, we’re here
+          to guide you every step of the way.
+        </p>
+      </div>
+      <ul
+        class="grid grid-cols-4 *:min-h-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
+      >
+        <li
+          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
+        >
+          <img
+            src="./assets/media-assets/team-image-1.png"
+            alt="illustration-graphs-1"
+            class="w-full h-72 object-cover"
+          />
+          <div class="w-full flex flex-col px-5 py-3">
+            <h3 class="text-xl font-bold">John Reynolds</h3>
+            <p>Chief Business Strategist</p>
+          </div>
+        </li>
+        <li
+          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
+        >
+          <img
+            src="./assets/media-assets/team-image-2.png"
+            alt="illustration-graphs-1"
+            class="w-full h-72 object-cover"
+          />
+          <div class="w-full flex flex-col px-5 py-3">
+            <h3 class="text-xl font-bold">John Reynolds</h3>
+            <p>Chief Business Strategist</p>
+          </div>
+        </li>
+        <li
+          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
+        >
+          <img
+            src="./assets/media-assets/team-image-3.png"
+            alt="illustration-graphs-1"
+            class="w-full h-72 object-cover"
+          />
+          <div class="w-full flex flex-col px-5 py-3">
+            <h3 class="text-xl font-bold">John Reynolds</h3>
+            <p>Chief Business Strategist</p>
+          </div>
+        </li>
+        <li
+          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
+        >
+          <img
+            src="./assets/media-assets/team-image-4.png"
+            alt="illustration-graphs-1"
+            class="w-full h-72 object-cover"
+          />
+          <div class="w-full flex flex-col px-5 py-3">
+            <h3 class="text-xl font-bold">John Reynolds</h3>
+            <p>Chief Business Strategist</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section
+      id="testimonials"
+      class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30"
+    >
+      <div class="flex flex-col items-center gap-3">
+        <h2 class="text-4xl font-bold">What Our Clients Say</h2>
+        <p
+          class="text-(--color-secondary-foreground) text-xl md:max-w-1/2 text-center"
+        >
+          Real stories from businesses we've helped transform. Discover how our
+          consulting services have made a difference.
+        </p>
+      </div>
+      <ul
+        class="grid grid-cols-3 *:min-h-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
+      >
+        <li class="bg-(--color-background) p-4 rounded-xl">
+          <quote
+            >“Their expertise in operational efficiency saved us time and money.
+            We’re running a much leaner, more effective operation now”</quote
+          >
+          <span class="flex items-center gap-3 mt-4">
+            <img
+              src="./assets/media-assets/client-image-1.png"
+              alt="client image"
+              class="size-10 rounded-full object-cover"
+            />
+            <div class="flex flex-col">
+              <h3 class="font-bold">Clare Bamford</h3>
+              <p class="text-sm">
+                @clare.stk
+              </p>
+            </div>
+          </span>
+        </li>
+         <li class="bg-(--color-background) p-4 rounded-xl">
+          <quote
+            >“Their market expansion strategies were exactly what we needed. We’ve successfully entered two new regions with ease.”</quote
+          >
+          <span class="flex items-center gap-3 mt-4">
+            <img
+              src="./assets/media-assets/client-image-2.png"
+              alt="client image"
+              class="size-10 rounded-full object-cover"
+            />
+            <div class="flex flex-col">
+              <h3 class="font-bold">Mark Williams</h3>
+              <p class="text-sm">
+                @mark_grows
+              </p>
+            </div>
+          </span>
+        </li>
+        <li class="bg-(--color-background) p-4 rounded-xl">
+          <quote
+            >“The leadership training we received has transformed our management team. We're more aligned and productive than ever.”</quote
+          >
+          <span class="flex items-center gap-3 mt-4">
+            <img
+              src="./assets/media-assets/client-image-3.png"
+              alt="client image"
+              class="size-10 rounded-full object-cover"
+            />
+            <div class="flex flex-col">
+              <h3 class="font-bold">Samantha Green</h3>
+              <p class="text-sm">
+                @sam_greenlead
+              </p>
+            </div>
+          </span>
+        </li>
+        <li class="bg-(--color-background) p-4 rounded-xl">
+          <quote
+            >“Thanks to their business strategy insights, we’ve seen a 25% increase in our revenue within six months.”</quote
+          >
+          <span class="flex items-center gap-3 mt-4">
+            <img
+              src="./assets/media-assets/client-image-4.png"
+              alt="client image"
+              class="size-10 rounded-full object-cover"
+            />
+            <div class="flex flex-col">
+              <h3 class="font-bold">James O'Connor</h3>
+              <p class="text-sm">
+                @james_ontrack
+              </p>
+            </div>
+          </span>
+        </li>
+        <li class="bg-(--color-background) p-4 rounded-xl">
+          <quote
+            >“Their operational analysis identified inefficiencies we weren’t even aware of. Our processes are now far more streamlined.”</quote
+          >
+          <span class="flex items-center gap-3 mt-4">
+            <img
+              src="./assets/media-assets/client-image-5.png"
+              alt="client image"
+              class="size-10 rounded-full object-cover"
+            />
+            <div class="flex flex-col">
+              <h3 class="font-bold">Laura Knight</h3>
+              <p class="text-sm">
+                @laura_opsmaster
+              </p>
+            </div>
+          </span>
+        </li>
+        <li class="bg-(--color-background) p-4 rounded-xl">
+          <quote
+            >“Their support during our organizational change was invaluable. We navigated a major restructure without disrupting our productivity.”</quote
+          >
+          <span class="flex items-center gap-3 mt-4">
+            <img
+              src="./assets/media-assets/client-image-6.png"
+              alt="client image"
+              class="size-10 rounded-full object-cover"
+            />
+            <div class="flex flex-col">
+              <h3 class="font-bold">Brian Chen</h3>
+              <p class="text-sm">
+                @emma_humanconnect
+              </p>
+            </div>
+          </span>
+        </li>
+        
+      </ul>
+    </section>
+
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>

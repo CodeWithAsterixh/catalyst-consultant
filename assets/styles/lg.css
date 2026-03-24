@@ -1,0 +1,5 @@
+@media (width >= 64rem) {
+  .container-padding {
+    padding-inline: calc(var(--spacing) * 24);
+  }
+}

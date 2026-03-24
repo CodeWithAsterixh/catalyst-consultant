@@ -1,0 +1,21 @@
+:root{
+    /* main-colors */
+    --color-primary: #102D15;
+    --color-secondary: #C8DA90;
+    --color-background: #DAE2CB;
+    --color-spark:#B2FC04;
+    /* foreground-colors */
+    --color-primary-foreground: #E7FEB1;
+    --color-secondary-foreground: #3E5801;
+    --color-foreground: #102D15;
+
+    --spacing: 0.25rem;
+    --infinity-px: 9999px;
+}
+body{
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    max-width: 100vw;
+    padding: 0;
+    margin: 0;
+}
