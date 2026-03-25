@@ -372,7 +372,7 @@
       id="testimonials"
       class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30"
     >
-      <div class="flex flex-col items-center gap-3">
+      <div class="flex flex-col md:items-center gap-3">
         <h2 class="text-4xl font-bold">What Our Clients Say</h2>
         <p
           class="text-(--color-secondary-foreground) text-xl md:max-w-1/2 md:text-center"
@@ -859,36 +859,123 @@
       id="cta"
       class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30"
     >
-      <div class="w-fit md:max-w-3/7 flex flex-col gap-4 bg-(--color-primary) p-6 rounded-xl">
-        <h1 class="text-4xl text-(--color-primary-foreground)">Latest articles</h1>
+      <div
+        class="w-fit md:max-w-3/7 flex flex-col gap-4 bg-(--color-primary) p-6 rounded-xl"
+      >
+        <h1 class="text-4xl text-(--color-primary-foreground)">
+          Latest articles
+        </h1>
         <p class="text-lg font-normal text-(--color-primary-foreground)">
           Stay up to date with the latest trends, tips, and expert advice from
           our team of consultants.
         </p>
         <button
-            class="liquid_button mt-2 variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
+          class="liquid_button mt-2 variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
+        >
+          Book a call now
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Book a call now
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="Arrow right">
-                <path
-                  id="Icon"
-                  d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
-                  stroke="#102D15"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-            </svg>
-          </button>
+            <g id="Arrow right">
+              <path
+                id="Icon"
+                d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                stroke="#102D15"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+          </svg>
+        </button>
       </div>
+    </section>
+    <section id="faq" class="container-padding py-24! flex flex-col gap-10">
+      <h1 class="text-2xl md:text-4xl text-(--color-primary)">
+        Frequently Asked Questions
+      </h1>
+
+      <ul
+        class="w-full flex flex-col gap-px *:bg-(--color-secondary-foreground) rounded-xl *:p-5 *:first:rounded-t-xl *:last:rounded-b-xl"
+      >
+        <li class="h-fit flex-col text-(--color-background)">
+          <details>
+            <summary>
+              What type of businesses do you work with?
+              <span class="try-toggle"></span>
+            </summary>
+            <div data-details-slot="content">
+              <p>
+                We work with businesses of all sizes, from startups to
+                established enterprises, across a variety of industries. Our
+                solutions are tailored to meet your specific needs.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li class="h-fit flex-col text-(--color-background)">
+          <details>
+            <summary>
+              How do your consulting services work?
+              <span class="try-toggle"></span>
+            </summary>
+            <div data-details-slot="content">
+              <p>
+                We work with businesses of all sizes, from startups to
+                established enterprises, across a variety of industries. Our
+                solutions are tailored to meet your specific needs.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li class="h-fit flex-col text-(--color-background)">
+          <details>
+            <summary>
+              What is the cost of your consulting services?
+              <span class="try-toggle"></span>
+            </summary>
+            <div data-details-slot="content">
+              <p>
+                We work with businesses of all sizes, from startups to
+                established enterprises, across a variety of industries. Our
+                solutions are tailored to meet your specific needs.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li class="h-fit flex-col text-(--color-background)">
+          <details>
+            <summary>
+              How soon can I expect results? <span class="try-toggle"></span>
+            </summary>
+            <div data-details-slot="content">
+              <p>
+                We work with businesses of all sizes, from startups to
+                established enterprises, across a variety of industries. Our
+                solutions are tailored to meet your specific needs.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li class="h-fit flex-col text-(--color-background)">
+          <details>
+            <summary>
+              How do I get started? <span class="try-toggle"></span>
+            </summary>
+            <div data-details-slot="content">
+              <p>
+                We work with businesses of all sizes, from startups to
+                established enterprises, across a variety of industries. Our
+                solutions are tailored to meet your specific needs.
+              </p>
+            </div>
+          </details>
+        </li>
+      </ul>
     </section>
 
     <script type="module" src="./assets/scripts/main.js"></script>

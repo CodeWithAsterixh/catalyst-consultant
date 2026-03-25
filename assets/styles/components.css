@@ -50,3 +50,40 @@
 .hero-image-container{
     width: 100%;
 }
+details summary::marker{
+    content: "";
+}
+details summary{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+details summary::after{
+    content: "+";
+    font-weight: bolder;
+    font-size: 2rem;
+    line-height: 1rem;
+    margin-top: -0.25rem;
+}
+details[open] summary::after{
+    content: "-";
+    font-weight: bolder;
+    font-size: 2rem;
+    line-height: 1rem;
+    margin-top: -0.25rem;
+}
+details> [data-details-slot="content"]{
+    height: 0px;
+    transition: height 300ms ease-out;
+    overflow: hidden;
+}
+details[open]> [data-details-slot="content"]{
+    height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference){
+    details[open] [data-details-slot="content"]{
+        interpolate-size: allow-keywords;
+    }
+}
