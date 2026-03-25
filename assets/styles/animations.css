@@ -8,8 +8,8 @@
   position: relative;
   width: fit-content;
 }
-.underline-animation-enter::after,
-.underline-animation-leave::after {
+.underline-animation-enter::before,
+.underline-animation-leave::before {
   content: "";
   position: absolute;
   left: 0;
@@ -19,10 +19,10 @@
   background-color: var(--color-primary);
 }
 
-.underline-animation-enter::after {
+.underline-animation-enter::before {
   animation: underline_animation_enter 0.3s ease-in-out forwards;
 }
-.underline-animation-leave::after {
+.underline-animation-leave::before {
   animation: underline_animation_leave 0.3s ease-in-out forwards;
 }
 @keyframes underline_animation_enter {

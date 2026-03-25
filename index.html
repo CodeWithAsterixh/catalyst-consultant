@@ -13,27 +13,27 @@
     >
       <!--logo-->
       <span class="flex items-center justify-center gap-2 w-fit z-10">
-        <img src="assets/media-assets/Logo.svg" class="size-7 lg:size-8" />
-        <h1 class="text-2xl md:text-sm lg:text-2xl font-bold">
+        <img src="assets/media-assets/Logo.svg" class="size-5 md:size-7 lg:size-8" />
+        <h1 class="text-xl md:text-sm lg:text-2xl font-bold">
           Catalyst Advisor
         </h1>
       </span>
+      <!-- nav control for mobile -->
+      <button
+        data-toggle-animation="dynamic_toggle"
+        data-animation-variables="{trigger_showClass:'navigation-menu-shown bg-linear-to-b from-(--color-secondary) to-(--color-background)', trigger_removeClass:'navigation-menu-hidden bg-linear-to-b from-(--color-background) to-(--color-secondary)', enterClass: 'nav_menu_opened', leaveClass: 'nav_menu_closed', trigger_receiver: 'navigation_menu'}"
+        class="flex *:duration-500 size-7 flex-col justify-center z-999 md:hidden gap-1 *:w-7 *:h-1 *:bg-(--color-foreground)"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <!--nav-->
       <div
         data-trigger-receiver-id="navigation_menu"
         id="navigation_menu"
         class="w-full h-screen fixed top-0 left-0 md:bg-linear-to-b md:from-transparent md:to-transparent flex items-center justify-center md:justify-end gap-4 container-padding md:gap-0 flex-col md:flex-row md:absolute md:h-full"
       >
-        <!-- nav control for mobile -->
-        <button
-          data-toggle-animation="dynamic_toggle"
-          data-animation-variables="{trigger_showClass:'navigation-menu-shown bg-linear-to-b from-(--color-secondary) to-(--color-background)', trigger_removeClass:'navigation-menu-hidden bg-linear-to-b from-(--color-background) to-(--color-secondary)', enterClass: 'nav_menu_opened', leaveClass: 'nav_menu_closed', trigger_receiver: 'navigation_menu'}"
-          class="flex *:duration-500 size-7 flex-col fixed md:hidden top-4 right-4 gap-1 *:w-7 *:h-1 *:bg-(--color-foreground)"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
         <nav>
           <ul
             class="header-nav flex flex-col items-center *:text-xl md:*:text-sm lg:*:text-base md:flex-row gap-4 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2"
@@ -977,6 +977,206 @@
         </li>
       </ul>
     </section>
+    <footer
+      class="container-padding py-24! flex flex-col gap-10 bg-(--color-primary)"
+    >
+      <section
+        class="w-full flex flex-col gap-10 bg-(--color-secondary-foreground) text-(--color-background) p-5 md:p-10 rounded-xl"
+      >
+        <div
+          class="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10"
+        >
+          <nav class="w-fit flex flex-col gap-5">
+            <h2 class="text-xl font-bold">Menu</h2>
+            <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
+              <li>
+                <a
+                  href="#"
+                  class="before:bg-(--color-background)!"
+                  data-hover-animation="underline_animation"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="before:bg-(--color-background)!"
+                  data-hover-animation="underline_animation"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="before:bg-(--color-background)!"
+                  data-hover-animation="underline_animation"
+                  >Resources</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="before:bg-(--color-background)!"
+                  data-hover-animation="underline_animation"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="before:bg-(--color-background)!"
+                  data-hover-animation="underline_animation"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <nav class="w-fit flex flex-col gap-5">
+            <h2 class="text-xl font-bold">Support</h2>
+            <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
+              <li>
+                <a
+                  href="#"
+                  class="before:bg-(--color-background)!"
+                  data-hover-animation="underline_animation"
+                  >info@gmail.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="before:bg-(--color-background)!"
+                  data-hover-animation="underline_animation"
+                  >Contact Customer Success</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="w-fit flex flex-col gap-5">
+            <h2 class="text-xl font-bold">Trust & Legal</h2>
+            <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
+              <li>
+                <a
+                  href="#"
+                  class="before:bg-(--color-background)!"
+                  data-hover-animation="underline_animation"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="before:bg-(--color-background)!"
+                  data-hover-animation="underline_animation"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <nav class="w-fit flex flex-col gap-5">
+            <h2 class="text-xl font-bold">Socials</h2>
+            <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
+              <li>
+                <a href="#" class="w-fit flex items-center gap-2">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Instagram">
+                      <path
+                        id="Icon"
+                        d="M11.6667 4.33325H11.6733M4.66668 1.33325H11.3333C13.1743 1.33325 14.6667 2.82564 14.6667 4.66659V11.3333C14.6667 13.1742 13.1743 14.6666 11.3333 14.6666H4.66668C2.82573 14.6666 1.33334 13.1742 1.33334 11.3333V4.66659C1.33334 2.82564 2.82573 1.33325 4.66668 1.33325ZM10.6667 7.57992C10.749 8.13475 10.6542 8.7014 10.3958 9.19926C10.1375 9.69713 9.72877 10.1009 9.22776 10.353C8.72675 10.6052 8.15897 10.693 7.6052 10.6039C7.05143 10.5148 6.53985 10.2533 6.14324 9.85669C5.74662 9.46008 5.48516 8.9485 5.39605 8.39473C5.30695 7.84095 5.39472 7.27318 5.64689 6.77217C5.89907 6.27115 6.3028 5.86241 6.80067 5.60408C7.29853 5.34575 7.86518 5.25098 8.42001 5.33325C8.98596 5.41718 9.50991 5.68089 9.91447 6.08546C10.319 6.49002 10.5828 7.01397 10.6667 7.57992Z"
+                        stroke="#F7FFE6"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                  </svg>
+
+                  Instagram</a
+                >
+              </li>
+              <li>
+                <a href="#" class="w-fit flex items-center gap-2">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Linkedin">
+                      <g id="Icon">
+                        <path
+                          d="M10.6667 5.33325C11.7275 5.33325 12.745 5.75468 13.4951 6.50482C14.2452 7.25497 14.6667 8.27239 14.6667 9.33325V13.9999H12V9.33325C12 8.97963 11.8595 8.64049 11.6095 8.39044C11.3594 8.14039 11.0203 7.99992 10.6667 7.99992C10.3131 7.99992 9.97392 8.14039 9.72387 8.39044C9.47382 8.64049 9.33334 8.97963 9.33334 9.33325V13.9999H6.66668V9.33325C6.66668 8.27239 7.0881 7.25497 7.83825 6.50482C8.58839 5.75468 9.60581 5.33325 10.6667 5.33325Z"
+                          stroke="#F7FFE6"
+                          stroke-width="1.6"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M4.00001 5.99992H1.33334V13.9999H4.00001V5.99992Z"
+                          stroke="#F7FFE6"
+                          stroke-width="1.6"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M2.66668 3.99992C3.40306 3.99992 4.00001 3.40296 4.00001 2.66659C4.00001 1.93021 3.40306 1.33325 2.66668 1.33325C1.9303 1.33325 1.33334 1.93021 1.33334 2.66659C1.33334 3.40296 1.9303 3.99992 2.66668 3.99992Z"
+                          stroke="#F7FFE6"
+                          stroke-width="1.6"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+
+                  LinkedIn</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div
+          class="w-full flex items-center justify-center md:justify-between md:flex-row flex-col gap-10"
+        >
+          <button
+            class="liquid_button text-(--color-background)! text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
+          >
+            Book a consultation
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Arrow right">
+                <path
+                  id="Icon"
+                  d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                  stroke="var(--color-background)"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </button>
+
+          <em class="text-center not-italic"
+            >2024 Catalyst Advisor. All rights reserved</em
+          >
+        </div>
+      </section>
+    </footer>
 
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>
