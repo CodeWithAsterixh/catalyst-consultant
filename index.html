@@ -515,7 +515,6 @@
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class="mt-1"
             >
               <g id="Arrow right">
                 <path
@@ -727,10 +726,10 @@
           our team of consultants.
         </p>
       </div>
-      <ul
+      <div
         class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] lg:grid-cols-3 *:min-h-full *:w-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
       >
-        <li
+        <article
           class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden justify-between"
         >
           <img
@@ -770,8 +769,8 @@
               </svg>
             </button>
           </div>
-        </li>
-        <li
+        </article>
+        <article
           class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
         >
           <img
@@ -811,8 +810,8 @@
               </svg>
             </button>
           </div>
-        </li>
-        <li
+        </article>
+        <article
           class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
         >
           <img
@@ -852,9 +851,46 @@
               </svg>
             </button>
           </div>
-        </li>
-      </ul>
+        </article>
+      </div>
     </section>
+
+    <section
+      id="cta"
+      class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30"
+    >
+      <div class="w-fit md:max-w-3/7 flex flex-col gap-4 bg-(--color-primary) p-6 rounded-xl">
+        <h1 class="text-4xl text-(--color-primary-foreground)">Latest articles</h1>
+        <p class="text-lg font-normal text-(--color-primary-foreground)">
+          Stay up to date with the latest trends, tips, and expert advice from
+          our team of consultants.
+        </p>
+        <button
+            class="liquid_button mt-2 variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
+          >
+            Book a call now
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Arrow right">
+                <path
+                  id="Icon"
+                  d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                  stroke="#102D15"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </button>
+      </div>
+    </section>
+
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>
 </html>
