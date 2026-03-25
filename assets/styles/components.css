@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   width: fit-content;
-  display: inline-block;
+  display: inline-flex;
   isolation: isolate;
   background: var(--color-primary);
   color: var(--color-spark);
@@ -10,6 +10,10 @@
   padding-inline: calc(var(--spacing) * 5);
   border-radius: var(--infinity-px);
   font-weight: bold;
+}
+.liquid_button.variant-spark{
+    background: var(--color-spark);
+    color: var(--color-primary);
 }
 
 @media (width < 48rem) {

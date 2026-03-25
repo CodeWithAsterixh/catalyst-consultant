@@ -82,7 +82,7 @@
         </nav>
         <!--cta-->
         <button
-          class="liquid_button text-xl md:text-sm lg:text-lg"
+          class="liquid_button text-sm text-nowrap md:text-sm lg:text-lg"
           data-hover-animation="character_animation, dynamic_toggle"
           data-animation-variables="{text:'Book a consultation', variant:'char', enterClass: 'liquid_button-enter', leaveClass: 'liquid_button-leave'}"
         >
@@ -112,7 +112,7 @@
         </div>
         <div class="w-full flex flex-col gap-6">
           <button
-            class="liquid_button text-xl md:text-sm lg:text-lg"
+            class="liquid_button text-sm text-nowrap md:text-sm lg:text-lg"
             data-hover-animation="character_animation, dynamic_toggle"
             data-animation-variables="{text:'Book a consultation', variant:'char', enterClass: 'liquid_button-enter', leaveClass: 'liquid_button-leave'}"
           >
@@ -492,7 +492,232 @@
         </li>
       </ul>
     </section>
+    <section
+      id="pricing"
+      class="container-padding py-24! gap-10 md:gap-5 bg-(--color-primary) grid md:grid-cols-2"
+    >
+      <!-- Pricing writeup -->
+      <article class="py-4 flex flex-col gap-10 justify-between">
+        <div class="w-full flex flex-col gap-5">
+          <h2 class="text-4xl text-(--color-primary-foreground)">
+            Simple, Transparent <br />
+            Pricing
+          </h2>
+          <p class="text-lg text-(--color-background)">
+            One comprehensive plan with all the tools and support your business
+            needs to succeed.
+          </p>
 
+          <button
+            class="liquid_button variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
+          >
+            Book a consultation
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="mt-1"
+            >
+              <g id="Arrow right">
+                <path
+                  id="Icon"
+                  d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                  stroke="#102D15"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+
+        <p class="text-base text-(--color-background)">
+          Get full access to our expert consulting services, tailored
+          specifically to your business challenges.
+        </p>
+      </article>
+      <!-- Pricing list -->
+      <article
+        class="bg-(--color-secondary) rounded-xl p-5 md:p-10 flex flex-col gap-5"
+      >
+        <div class="w-full flex flex-col gap-2">
+          <h2 class="text-xl text-(--color-secondary-foreground)">
+            Starting at
+          </h2>
+          <strong class="text-4xl"
+            >$999
+            <sub class="text-sm text-(--color-secondary-foreground) font-normal"
+              >/Monthly</sub
+            ></strong
+          >
+          <hr class="text-(--color-secondary-foreground) mt-3" />
+        </div>
+        <div class="w-full flex flex-col gap-3">
+          <h2 class="text-xl">What You Get</h2>
+          <ul class="w-full flex flex-col gap-3">
+            <li class="flex items-center gap-2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="Check circle" clip-path="url(#clip0_1_479)">
+                  <path
+                    id="Icon"
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_479">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              Custom business strategy development
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="Check circle" clip-path="url(#clip0_1_479)">
+                  <path
+                    id="Icon"
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_479">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              In-depth operational efficiency analysis
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="Check circle" clip-path="url(#clip0_1_479)">
+                  <path
+                    id="Icon"
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_479">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              Leadership training and development sessions
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="Check circle" clip-path="url(#clip0_1_479)">
+                  <path
+                    id="Icon"
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_479">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              Market expansion consulting
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="Check circle" clip-path="url(#clip0_1_479)">
+                  <path
+                    id="Icon"
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_479">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              Ongoing support and regular performance reviews
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="Check circle" clip-path="url(#clip0_1_479)">
+                  <path
+                    id="Icon"
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_479">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              Dedicated account manager
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>
 </html>
