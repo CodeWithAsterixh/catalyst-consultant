@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./assets/styles/root.css" />
+    <title>Catalyst Advisor | Expert Business Consulting Services</title>
   </head>
   <body>
-    <!--Header-->
     <header
       class="sticky top-0 z-9999 isolate w-full bg-(--color-secondary) container-padding flex items-center justify-between"
     >
       <!--logo-->
       <span class="flex items-center justify-center gap-2 w-fit z-10">
-        <img src="assets/media-assets/Logo.svg" class="size-5 md:size-7 lg:size-8" />
+        <img
+          src="assets/media-assets/Logo.svg"
+          class="size-5 md:size-7 lg:size-8"
+        />
         <h1 class="text-xl md:text-sm lg:text-2xl font-bold">
           Catalyst Advisor
         </h1>
@@ -91,424 +94,896 @@
       </div>
     </header>
 
-    <!-- hero -->
-    <section
-      id="hero"
-      class="w-full h-fit container-padding grid gap-5 md:gap-0 md:grid-cols-[3fr_2fr]"
-    >
-      <!-- writeup -->
-      <article class="flex flex-col gap-8 h-full justify-center">
-        <div class="w-full flex flex-col gap-6">
-          <h1
-            class="text-4xl sm:text-6xl md:text-4xl lg:text-6xl leading-tight font-bold"
+    <main>
+      <!-- hero -->
+      <section
+        id="hero"
+        data-scroll-animation="dynamic_toggle"
+        data-animation-variables="{enterClass: 'hero_shown', leaveClass: 'hero_hidden', type: 'scrollTo'}"
+        class="w-full h-fit container-padding grid gap-5 md:gap-0 md:grid-cols-[3fr_2fr]"
+      >
+        <!-- writeup -->
+        <article class="flex flex-col gap-8 h-full justify-center">
+          <div class="w-full flex flex-col gap-6">
+            <h1
+              class="hero_heading text-4xl sm:text-6xl md:text-4xl lg:text-6xl leading-tight font-bold"
+            >
+              Unlock Your Business Potential with Expert Consulting
+            </h1>
+            <p
+              class="hero_sub_heading text-lg sm:text-2xl md:text-lg lg:text-2xl max-w-5/6 text-(--color-secondary-foreground)"
+            >
+              Tailored strategies to elevate your business and drive growth
+            </p>
+          </div>
+          <div class="w-full flex flex-col gap-6">
+            <button
+              class="liquid_button hero_cta_button text-sm text-nowrap md:text-sm lg:text-lg"
+              data-hover-animation="character_animation, dynamic_toggle"
+              data-animation-variables="{text:'Book a consultation', variant:'char', enterClass: 'liquid_button-enter', leaveClass: 'liquid_button-leave'}"
+            >
+              Book a consultation
+            </button>
+            <p
+              class="hero_cta_tagline text-sm lg:text-lg text-(--color-secondary-foreground) flex items-center justify-start gap-2"
+            >
+              <img
+                src="./assets/media-assets/GiftIcon.svg"
+                alt="gift-icon"
+                class="size-4 lg:size-6"
+              />
+              Helping 200+ companies achieve their business goals.
+            </p>
+          </div>
+        </article>
+        <!-- illustration -->
+        <article>
+          <div
+            class="relative isolate w-full h-full bg-(--color-secondary) rounded-4xl"
           >
-            Unlock Your Business Potential with Expert Consulting
+            <!-- ceo image -->
+            <span
+              class="size-full hero_image scale-95 md:scale-100 isolate z-1 block -skew-5 overflow-hidden rounded-4xl"
+            >
+              <img
+                src="./assets/media-assets/ceo-image.jpg"
+                alt="Ceo Handerson Lee image sitting with pc and smiling"
+                class="size-full object-cover max-h-[70vh] scale-110 skew-5"
+              />
+              <div
+                class="absolute z-0 bottom-0 right-0 h-32 w-60 bg-(--color-background) blur-xl rounded-l-[50%]"
+              ></div>
+            </span>
+
+            <!-- stats -->
+            <ul
+              class="absolute hero_profile_stats z-2 flex flex-col gap-2 bottom-10 md:-left-10 lg:-left-20"
+            >
+              <li
+                class="min-w-32 lg:min-w-40 px-4 py-1 flex flex-col bg-(--color-secondary) text-(--color-secondary-foreground) rounded-r-lg md:rounded-lg"
+              >
+                <h3 class="text-4xl font-bold">80%</h3>
+                <p class="text-sm">Success Rate</p>
+              </li>
+              <li
+                class="min-w-32 lg:min-w-40 px-4 py-1 flex flex-col bg-(--color-secondary) text-(--color-secondary-foreground) rounded-r-lg md:rounded-lg"
+              >
+                <h3 class="text-4xl font-bold">500+</h3>
+                <p class="text-sm">Satisfaction Clients</p>
+              </li>
+            </ul>
+            <!-- CEO name -->
+            <span
+              class="hero_ceo_name flex z-3 flex-col absolute bottom-12 right-4"
+            >
+              <h3 class="text-xl lg:text-3xl font-bold">Handerson Lee</h3>
+              <p class="text-xs lg:text-sm">CEO of catalyst advisor</p>
+            </span>
+          </div>
+        </article>
+      </section>
+
+      <!-- companies banner -->
+      <section
+        data-scroll-animation="dynamic_toggle"
+        data-animation-variables="{enterClass: 'companies_banner_shown', leaveClass: 'companies_banner_hidden', type: 'scrollTo', threshold: 0.5}"
+        id="companies-banner"
+        class="w-full overflow-hidden py-24"
+      >
+        <ul class="max-w-[80%] flex gap-6 items-center justify-center mx-auto">
+          <li class="shrink-0 md:shrink" style="--index: 1">
+            <img
+              src="./assets/media-assets/Logo-demo-componies-1.png"
+              alt="sample company logo 1"
+              class="h-6 lg:h-10 object-contain"
+            />
+          </li>
+          <li class="shrink-0 md:shrink" style="--index: 2">
+            <img
+              src="./assets/media-assets/Logo-demo-componies-2.png"
+              alt="sample company logo 2"
+              class="h-6 lg:h-10 object-contain"
+            />
+          </li>
+          <li class="shrink-0 md:shrink" style="--index: 3">
+            <img
+              src="./assets/media-assets/Logo-demo-componies-3.png"
+              alt="sample company logo 3"
+              class="h-6 lg:h-10 object-contain"
+            />
+          </li>
+          <li class="shrink-0 md:shrink" style="--index: 4">
+            <img
+              src="./assets/media-assets/Logo-demo-componies-4.png"
+              alt="sample company logo 4"
+              class="h-6 lg:h-10 object-contain"
+            />
+          </li>
+          <li class="shrink-0 md:shrink" style="--index: 5">
+            <img
+              src="./assets/media-assets/Logo-demo-componies-5.png"
+              alt="sample company logo 5"
+              class="h-6 lg:h-10 object-contain"
+            />
+          </li>
+          <li class="shrink-0 md:shrink" style="--index: 6">
+            <img
+              src="./assets/media-assets/Logo-demo-componies-6.png"
+              alt="sample company logo 6"
+              class="h-6 lg:h-10 object-contain"
+            />
+          </li>
+          <li class="shrink-0 md:shrink" style="--index: 7">
+            <img
+              src="./assets/media-assets/Logo-demo-componies-7.png"
+              alt="sample company logo 7"
+              class="h-6 lg:h-10 object-contain"
+            />
+          </li>
+        </ul>
+      </section>
+
+      <!-- who we are -->
+      <section
+        id="who_we_are"
+        class="container-padding py-24! bg-(--color-primary)"
+        data-scroll-animation="dynamic_toggle"
+        data-animation-variables="{enterClass: 'who_we_are_shown', leaveClass: 'who_we_are_hidden', type: 'scrollTo', threshold: 0.5}"
+      >
+        <h2 class="text-(--color-background)">Who we are?</h2>
+        <p class="text-(--color-primary-foreground) text-xl md:max-w-1/2">
+          we are driven by a passion for helping businesses thrive. With decades
+          of experience and a commitment to excellence, our team is ready to
+          guide you through every challenge.
+        </p>
+      </section>
+
+      <!-- solutions -->
+      <section
+        id="solutions"
+        class="container-padding py-24! flex flex-col gap-10"
+      >
+        <div class="w-fit md:max-w-3/7 flex flex-col gap-10">
+          <h1
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'solutions_heading1_shown', leaveClass: 'solutions_heading1_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="text-4xl solutions_heading1_hidden"
+          >
+            Tailored Solutions for Every Challenge
           </h1>
           <p
-            class="text-lg sm:text-2xl md:text-lg lg:text-2xl max-w-5/6 text-(--color-secondary-foreground)"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'solutions_p_shown', leaveClass: 'solutions_p_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="text-xl text-(--color-secondary-foreground) solutions_p_hidden"
           >
-            Tailored strategies to elevate your business and drive growth
+            We provide custom solutions that address your specific business
+            needs. From strategy to execution, we focus on delivering measurable
+            results.
           </p>
         </div>
-        <div class="w-full flex flex-col gap-6">
-          <button
-            class="liquid_button text-sm text-nowrap md:text-sm lg:text-lg"
-            data-hover-animation="character_animation, dynamic_toggle"
-            data-animation-variables="{text:'Book a consultation', variant:'char', enterClass: 'liquid_button-enter', leaveClass: 'liquid_button-leave'}"
-          >
-            Book a consultation
-          </button>
-          <p
-            class="text-sm lg:text-lg text-(--color-secondary-foreground) flex items-center justify-start gap-2"
-          >
-            <img
-              src="./assets/media-assets/GiftIcon.svg"
-              alt="gift-icon"
-              class="size-4 lg:size-6"
-            />
-            Helping 200+ companies achieve their business goals.
-          </p>
-        </div>
-      </article>
-      <!-- illustration -->
-      <article>
-        <div
-          class="relative isolate w-full h-full bg-(--color-secondary) rounded-4xl"
+        <ul
+          class="grid min-[498px]:grid-cols-2 md:grid-cols-3 *:min-h-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
         >
-          <!-- ceo image -->
-          <span
-            class="size-full scale-95 md:scale-100 isolate z-1 block -skew-5 overflow-hidden rounded-4xl"
+          <li
+            style="--index: 1"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'solutions_card_shown', leaveClass: 'solutions_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3 items-center justify-between solutions_card_hidden"
+          >
+            <div class="w-full flex flex-col gap-3">
+              <h3 class="text-xl font-bold">Business Strategy</h3>
+              <p>
+                We craft data-driven strategies that help you reach your goals
+                and drive sustainable growth.
+              </p>
+            </div>
+            <img
+              src="./assets/media-assets/illustration-graphs-1.svg"
+              alt="3 wavy lines graph illustration"
+              class="size-full object-contain"
+            />
+          </li>
+          <li
+            style="--index: 2"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'solutions_card_shown', leaveClass: 'solutions_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3 solutions_card_hidden"
+          >
+            <div class="w-full flex flex-col gap-3">
+              <h3 class="text-xl font-bold">Operational Efficiency</h3>
+              <p>
+                We streamline processes to increase productivity and reduce
+                costs, ensuring smoother operations.
+              </p>
+            </div>
+
+            <img
+              src="./assets/media-assets/illustration-graphs-2.svg"
+              alt="3 colored bars chart"
+              class="size-full object-contain"
+            />
+          </li>
+          <li
+            style="--index: 3"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'solutions_card_shown', leaveClass: 'solutions_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3 solutions_card_hidden"
+          >
+            <div class="w-full flex flex-col gap-3">
+              <h3 class="text-xl font-bold">Market Expansion</h3>
+              <p>
+                We help you enter new markets with a well-researched approach
+                that sets you up for success.
+              </p>
+            </div>
+
+            <img
+              src="./assets/media-assets/illustration-graphs-3.svg"
+              alt="2 colored bars chart"
+              class="size-full object-contain"
+            />
+          </li>
+        </ul>
+      </section>
+
+      <!-- team -->
+      <section id="team" class="container-padding py-24! flex flex-col gap-10">
+        <div
+          data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'team_writeup_shown', leaveClass: 'team_writeup_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="w-fit md:max-w-5/7 flex flex-col gap-10 team_writeup_hidden"
+        >
+          <p class="text-2xl md:text-4xl">
+            Our team of seasoned professionals is dedicated to helping you
+            achieve your business goals. With expertise across various fields,
+            we’re here to guide you every step of the way.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] md:grid-cols-3 lg:grid-cols-4 *:min-h-full *:w-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
+        >
+          <article
+            style="--index: 1"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden"
           >
             <img
-              src="./assets/media-assets/ceo-image.jpg"
-              alt="Ceo image sitting with pc"
-              class="size-full object-cover max-h-[70vh] scale-110 skew-5"
+              src="./assets/media-assets/team-image-1.png"
+              alt="Image of John Reynnold the Chief business strategist"
+              class="w-full h-52 md:h-72 object-cover"
+            />
+            <div class="w-full flex flex-col px-5 py-3">
+              <h3 class="text-base md:text-xl font-bold">John Reynolds</h3>
+              <p class="text-sm md:text-base">Chief Business Strategist</p>
+            </div>
+          </article>
+          <article
+            style="--index: 3"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden"
+          >
+            <img
+              src="./assets/media-assets/team-image-2.png"
+              alt="Image of Quincy David the Business Strategist"
+              class="w-full h-52 md:h-72 object-cover"
+            />
+            <div class="w-full flex flex-col px-5 py-3">
+              <h3 class="text-base md:text-xl font-bold">Quincy David</h3>
+              <p class="text-sm md:text-base">Business Strategist</p>
+            </div>
+          </article>
+          <article
+            style="--index: 3"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden"
+          >
+            <img
+              src="./assets/media-assets/team-image-3.png"
+              alt="Image of Quincy David the Chief Analyst"
+              class="w-full h-52 md:h-72 object-cover"
+            />
+            <div class="w-full flex flex-col px-5 py-3">
+              <h3 class="text-base md:text-xl font-bold">Lou Xian</h3>
+              <p class="text-sm md:text-base">Chief Analyst</p>
+            </div>
+          </article>
+          <article
+            style="--index: 4"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden"
+          >
+            <img
+              src="./assets/media-assets/team-image-4.png"
+              alt="Image of Martin Wellington the Manager"
+              class="w-full h-52 md:h-72 object-cover"
+            />
+            <div class="w-full flex flex-col px-5 py-3">
+              <h3 class="text-base md:text-xl font-bold">Martin Wellington</h3>
+              <p class="text-sm md:text-base">Manager</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- testimonials -->
+      <section
+        id="testimonials"
+        class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30"
+      >
+        <div class="flex flex-col md:items-center gap-3">
+          <h2
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'testimonials_h2_shown', leaveClass: 'testimonials_h2_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="text-4xl font-bold testimonials_h2_hidden"
+          >
+            What Our Clients Say
+          </h2>
+          <p
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'testimonials_h2_shown testimonials_p_hidden', leaveClass: 'testimonials_p_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="text-(--color-secondary-foreground) text-xl md:max-w-1/2 md:text-center testimonials_p_hidden"
+          >
+            Real stories from businesses we've helped transform. Discover how
+            our consulting services have made a difference.
+          </p>
+        </div>
+        <ul
+          class="grid min-[498px]:grid-cols-2 md:grid-cols-3 *:min-h-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
+        >
+          <li
+            style="--index: 1"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-background) p-4 rounded-xl"
+          >
+            <blockquote>
+              “Their expertise in operational efficiency saved us time and
+              money. We’re running a much leaner, more effective operation now”
+            </blockquote>
+            <span class="flex items-center gap-3 mt-4">
+              <img
+                src="./assets/media-assets/client-image-1.png"
+                alt="Clare Bamford - client picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div class="flex flex-col">
+                <h3 class="font-bold">Clare Bamford</h3>
+                <p class="text-sm">@clare.stk</p>
+              </div>
+            </span>
+          </li>
+          <li
+            style="--index: 2"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden"
+          >
+            <blockquote>
+              “Their market expansion strategies were exactly what we needed.
+              We’ve successfully entered two new regions with ease.”
+            </blockquote>
+            <span class="flex items-center gap-3 mt-4">
+              <img
+                src="./assets/media-assets/client-image-2.png"
+                alt="Mark Williams - client picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div class="flex flex-col">
+                <h3 class="font-bold">Mark Williams</h3>
+                <p class="text-sm">@mark_grows</p>
+              </div>
+            </span>
+          </li>
+          <li
+            style="--index: 3"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden"
+          >
+            <blockquote>
+              “The leadership training we received has transformed our
+              management team. We're more aligned and productive than ever.”
+            </blockquote>
+            <span class="flex items-center gap-3 mt-4">
+              <img
+                src="./assets/media-assets/client-image-3.png"
+                alt="Samantha Green - client picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div class="flex flex-col">
+                <h3 class="font-bold">Samantha Green</h3>
+                <p class="text-sm">@sam_greenlead</p>
+              </div>
+            </span>
+          </li>
+          <li
+            style="--index: 4"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden"
+          >
+            <blockquote>
+              “Thanks to their business strategy insights, we’ve seen a 25%
+              increase in our revenue within six months.”
+            </blockquote>
+            <span class="flex items-center gap-3 mt-4">
+              <img
+                src="./assets/media-assets/client-image-4.png"
+                alt="James O'Connor - client picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div class="flex flex-col">
+                <h3 class="font-bold">James O'Connor</h3>
+                <p class="text-sm">@james_ontrack</p>
+              </div>
+            </span>
+          </li>
+          <li
+            style="--index: 5"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden"
+          >
+            <blockquote>
+              “Their operational analysis identified inefficiencies we weren’t
+              even aware of. Our processes are now far more streamlined.”
+            </blockquote>
+            <span class="flex items-center gap-3 mt-4">
+              <img
+                src="./assets/media-assets/client-image-5.png"
+                alt="Laura Knight Image - client picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div class="flex flex-col">
+                <h3 class="font-bold">Laura Knight</h3>
+                <p class="text-sm">@laura_opsmaster</p>
+              </div>
+            </span>
+          </li>
+          <li
+            style="--index: 6"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden"
+          >
+            <blockquote>
+              “Their support during our organizational change was invaluable. We
+              navigated a major restructure without disrupting our
+              productivity.”
+            </blockquote>
+            <span class="flex items-center gap-3 mt-4">
+              <img
+                src="./assets/media-assets/client-image-6.png"
+                alt="Biran Chen Image - Client Picture"
+                class="size-10 rounded-full object-cover"
+              />
+              <div class="flex flex-col">
+                <h3 class="font-bold">Brian Chen</h3>
+                <p class="text-sm">@emma_humanconnect</p>
+              </div>
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Pricing -->
+      <section
+        id="pricing"
+        class="container-padding py-24! gap-10 md:gap-5 bg-(--color-primary) grid md:grid-cols-2"
+      >
+        <!-- Pricing writeup -->
+        <article class="py-4 flex flex-col gap-10 justify-between">
+          <div class="w-full flex flex-col gap-5">
+            <h2 class="text-4xl text-(--color-primary-foreground)">
+              Simple, Transparent <br />
+              Pricing
+            </h2>
+            <p class="text-lg text-(--color-background)">
+              One comprehensive plan with all the tools and support your
+              business needs to succeed.
+            </p>
+
+            <button
+              class="liquid_button variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
+            >
+              Book a consultation
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="Arrow right">
+                  <path
+                    id="Icon"
+                    d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                    stroke="#102D15"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+            </button>
+          </div>
+
+          <p class="text-base text-(--color-background)">
+            Get full access to our expert consulting services, tailored
+            specifically to your business challenges.
+          </p>
+        </article>
+        <!-- Pricing list -->
+        <article
+          class="bg-(--color-secondary) rounded-xl p-5 md:p-10 flex flex-col gap-5"
+        >
+          <div class="w-full flex flex-col gap-2">
+            <h2 class="text-xl text-(--color-secondary-foreground)">
+              Starting at
+            </h2>
+            <strong class="text-4xl"
+              >$999
+              <sub
+                class="text-sm text-(--color-secondary-foreground) font-normal"
+                >/Monthly</sub
+              ></strong
+            >
+            <hr class="text-(--color-secondary-foreground) mt-3" />
+          </div>
+          <div class="w-full flex flex-col gap-3">
+            <h2 class="text-xl">What You Get</h2>
+            <ul class="w-full flex flex-col gap-3">
+              <li class="flex items-center gap-2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Check circle" clip-path="url(#clip0_1_479)">
+                    <path
+                      id="Icon"
+                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                      stroke="#507102"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_479">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                Custom business strategy development
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Check circle" clip-path="url(#clip0_1_479)">
+                    <path
+                      id="Icon"
+                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                      stroke="#507102"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_479">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                In-depth operational efficiency analysis
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Check circle" clip-path="url(#clip0_1_479)">
+                    <path
+                      id="Icon"
+                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                      stroke="#507102"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_479">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                Leadership training and development sessions
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Check circle" clip-path="url(#clip0_1_479)">
+                    <path
+                      id="Icon"
+                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                      stroke="#507102"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_479">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                Market expansion consulting
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Check circle" clip-path="url(#clip0_1_479)">
+                    <path
+                      id="Icon"
+                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                      stroke="#507102"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_479">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                Ongoing support and regular performance reviews
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Check circle" clip-path="url(#clip0_1_479)">
+                    <path
+                      id="Icon"
+                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                      stroke="#507102"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_479">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                Dedicated account manager
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- Articles -->
+      <section
+        id="articles"
+        class="container-padding py-24! flex flex-col gap-10"
+      >
+        <div class="w-fit md:max-w-3/7 flex flex-col gap-10">
+          <h1 class="text-4xl">Latest articles</h1>
+          <p class="text-xl text-(--color-secondary-foreground)">
+            Stay up to date with the latest trends, tips, and expert advice from
+            our team of consultants.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] lg:grid-cols-3 *:min-h-full *:w-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
+        >
+          <article
+            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden justify-between"
+          >
+            <img
+              src="./assets/media-assets/articles-image-1.png"
+              alt="Leadership in Organizational Success image"
+              class="w-full h-52 md:h-72 object-cover"
             />
             <div
-              class="absolute z-0 bottom-0 right-0 h-32 w-60 bg-(--color-background) blur-xl rounded-l-[50%]"
-            ></div>
-          </span>
-
-          <!-- stats -->
-          <ul
-            class="absolute z-2 flex flex-col gap-2 bottom-10 md:-left-10 lg:-left-20"
+              class="w-full grow flex flex-col justify-between gap-2 px-5 py-3"
+            >
+              <h3 class="text-base md:text-xl font-bold">
+                The Importance of Leadership in Organizational Success
+              </h3>
+              <p class="text-sm md:text-base">
+                Explore how strong leadership can drive your company toward
+                greater success.
+              </p>
+              <button
+                class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
+              >
+                Learn More
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Arrow right">
+                    <path
+                      id="Icon"
+                      d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                      stroke="var(--color-secondary-foreground)"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </article>
+          <article
+            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
           >
-            <li
-              class="min-w-32 lg:min-w-40 px-4 py-1 flex flex-col bg-(--color-secondary) text-(--color-secondary-foreground) rounded-r-lg md:rounded-lg"
+            <img
+              src="./assets/media-assets/articles-image-2.png"
+              alt="Location & Market Expansion image"
+              class="w-full h-52 md:h-72 object-cover"
+            />
+            <div
+              class="w-full grow flex flex-col justify-between gap-2 px-5 py-3"
             >
-              <h3 class="text-4xl font-bold">80%</h3>
-              <p class="text-sm">Success Rate</p>
-            </li>
-            <li
-              class="min-w-32 lg:min-w-40 px-4 py-1 flex flex-col bg-(--color-secondary) text-(--color-secondary-foreground) rounded-r-lg md:rounded-lg"
+              <h3 class="text-base md:text-xl font-bold">
+                Location & Market Expansion
+              </h3>
+              <p class="text-sm md:text-base">
+                Find out various strategies that can help your business expand
+                in different markets.
+              </p>
+              <button
+                class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
+              >
+                Learn More
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Arrow right">
+                    <path
+                      id="Icon"
+                      d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                      stroke="var(--color-secondary-foreground)"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </article>
+          <article
+            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
+          >
+            <img
+              src="./assets/media-assets/articles-image-3.png"
+              alt="illustration-graphs-1"
+              class="w-full h-52 md:h-72 object-cover"
+            />
+            <div
+              class="w-full grow flex flex-col justify-between gap-2 px-5 py-3"
             >
-              <h3 class="text-4xl font-bold">500+</h3>
-              <p class="text-sm">Satisfaction Clients</p>
-            </li>
-          </ul>
-          <!-- CEO name -->
-          <span class="flex z-3 flex-col absolute bottom-12 right-4">
-            <h3 class="text-xl lg:text-3xl font-bold">Handerson Lee</h3>
-            <p class="text-xs lg:text-sm">CEO of catalyst advisor</p>
-          </span>
+              <h3 class="text-base md:text-xl font-bold">
+                The Fragility of Organizational Change
+              </h3>
+              <p class="text-sm md:text-base">
+                A detailed step by step guide on how to have a successful
+                organizational change without disrupting your work productivity.
+              </p>
+              <button
+                class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
+              >
+                Learn More
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Arrow right">
+                    <path
+                      id="Icon"
+                      d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                      stroke="var(--color-secondary-foreground)"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </article>
         </div>
-      </article>
-    </section>
-    <!-- companies banner -->
-    <section id="companies-banner" class="w-full overflow-hidden py-24">
-      <ul class="max-w-[80%] flex gap-6 items-center justify-center mx-auto">
-        <li class="shrink-0 md:shrink">
-          <img
-            src="./assets/media-assets/Logo-demo-componies-1.png"
-            alt="sample company logo"
-            class="h-6 lg:h-10 object-contain"
-          />
-        </li>
-        <li class="shrink-0 md:shrink">
-          <img
-            src="./assets/media-assets/Logo-demo-componies-2.png"
-            alt="sample company logo"
-            class="h-6 lg:h-10 object-contain"
-          />
-        </li>
-        <li class="shrink-0 md:shrink">
-          <img
-            src="./assets/media-assets/Logo-demo-componies-3.png"
-            alt="sample company logo"
-            class="h-6 lg:h-10 object-contain"
-          />
-        </li>
-        <li class="shrink-0 md:shrink">
-          <img
-            src="./assets/media-assets/Logo-demo-componies-4.png"
-            alt="sample company logo"
-            class="h-6 lg:h-10 object-contain"
-          />
-        </li>
-        <li class="shrink-0 md:shrink">
-          <img
-            src="./assets/media-assets/Logo-demo-componies-5.png"
-            alt="sample company logo"
-            class="h-6 lg:h-10 object-contain"
-          />
-        </li>
-        <li class="shrink-0 md:shrink">
-          <img
-            src="./assets/media-assets/Logo-demo-componies-6.png"
-            alt="sample company logo"
-            class="h-6 lg:h-10 object-contain"
-          />
-        </li>
-        <li class="shrink-0 md:shrink">
-          <img
-            src="./assets/media-assets/Logo-demo-componies-7.png"
-            alt="sample company logo"
-            class="h-6 lg:h-10 object-contain"
-          />
-        </li>
-      </ul>
-    </section>
+      </section>
 
-    <section
-      id="who_we_are"
-      class="container-padding py-24! bg-(--color-primary)"
-    >
-      <h2 class="text-(--color-background)">Who we are?</h2>
-      <p class="text-(--color-primary-foreground) text-xl md:max-w-1/2">
-        we are driven by a passion for helping businesses thrive. With decades
-        of experience and a commitment to excellence, our team is ready to guide
-        you through every challenge.
-      </p>
-    </section>
-
-    <section
-      id="solutions"
-      class="container-padding py-24! flex flex-col gap-10"
-    >
-      <div class="w-fit md:max-w-3/7 flex flex-col gap-10">
-        <h1 class="text-4xl">Tailored Solutions for Every Challenge</h1>
-        <p class="text-xl text-(--color-secondary-foreground)">
-          We provide custom solutions that address your specific business needs.
-          From strategy to execution, we focus on delivering measurable results.
-        </p>
-      </div>
-      <ul
-        class="grid min-[498px]:grid-cols-2 md:grid-cols-3 *:min-h-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
+      <!-- Bottom CTA -->
+      <section
+        id="cta"
+        class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30"
       >
-        <li
-          class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3 items-center justify-between"
+        <div
+          class="w-fit md:max-w-3/7 flex flex-col gap-4 bg-(--color-primary) p-6 rounded-xl"
         >
-          <div class="w-full flex flex-col gap-3">
-            <h3 class="text-xl font-bold">Business Strategy</h3>
-            <p>
-              We craft data-driven strategies that help you reach your goals and
-              drive sustainable growth.
-            </p>
-          </div>
-          <img
-            src="./assets/media-assets/illustration-graphs-1.svg"
-            alt="illustration-graphs-1"
-            class="size-full object-contain"
-          />
-        </li>
-        <li class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3">
-          <div class="w-full flex flex-col gap-3">
-            <h3 class="text-xl font-bold">Operational Efficiency</h3>
-            <p>
-              We streamline processes to increase productivity and reduce costs,
-              ensuring smoother operations.
-            </p>
-          </div>
-
-          <img
-            src="./assets/media-assets/illustration-graphs-2.svg"
-            alt="illustration-graphs-2"
-            class="size-full object-contain"
-          />
-        </li>
-        <li class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3">
-          <div class="w-full flex flex-col gap-3">
-            <h3 class="text-xl font-bold">Market Expansion</h3>
-            <p>
-              We help you enter new markets with a well-researched approach that
-              sets you up for success.
-            </p>
-          </div>
-
-          <img
-            src="./assets/media-assets/illustration-graphs-3.svg"
-            alt="illustration-graphs-3"
-            class="size-full object-contain"
-          />
-        </li>
-      </ul>
-    </section>
-    <section id="team" class="container-padding py-24! flex flex-col gap-10">
-      <div class="w-fit md:max-w-5/7 flex flex-col gap-10">
-        <p class="text-2xl md:text-4xl">
-          Our team of seasoned professionals is dedicated to helping you achieve
-          your business goals. With expertise across various fields, we’re here
-          to guide you every step of the way.
-        </p>
-      </div>
-      <ul
-        class="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] md:grid-cols-3 lg:grid-cols-4 *:min-h-full *:w-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
-      >
-        <li
-          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
-        >
-          <img
-            src="./assets/media-assets/team-image-1.png"
-            alt="illustration-graphs-1"
-            class="w-full h-52 md:h-72 object-cover"
-          />
-          <div class="w-full flex flex-col px-5 py-3">
-            <h3 class="text-base md:text-xl font-bold">John Reynolds</h3>
-            <p class="text-sm md:text-base">Chief Business Strategist</p>
-          </div>
-        </li>
-        <li
-          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
-        >
-          <img
-            src="./assets/media-assets/team-image-2.png"
-            alt="illustration-graphs-1"
-            class="w-full h-52 md:h-72 object-cover"
-          />
-          <div class="w-full flex flex-col px-5 py-3">
-            <h3 class="text-base md:text-xl font-bold">John Reynolds</h3>
-            <p class="text-sm md:text-base">Chief Business Strategist</p>
-          </div>
-        </li>
-        <li
-          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
-        >
-          <img
-            src="./assets/media-assets/team-image-3.png"
-            alt="illustration-graphs-1"
-            class="w-full h-52 md:h-72 object-cover"
-          />
-          <div class="w-full flex flex-col px-5 py-3">
-            <h3 class="text-base md:text-xl font-bold">John Reynolds</h3>
-            <p class="text-sm md:text-base">Chief Business Strategist</p>
-          </div>
-        </li>
-        <li
-          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
-        >
-          <img
-            src="./assets/media-assets/team-image-4.png"
-            alt="illustration-graphs-1"
-            class="w-full h-52 md:h-72 object-cover"
-          />
-          <div class="w-full flex flex-col px-5 py-3">
-            <h3 class="text-base md:text-xl font-bold">John Reynolds</h3>
-            <p class="text-sm md:text-base">Chief Business Strategist</p>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <section
-      id="testimonials"
-      class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30"
-    >
-      <div class="flex flex-col md:items-center gap-3">
-        <h2 class="text-4xl font-bold">What Our Clients Say</h2>
-        <p
-          class="text-(--color-secondary-foreground) text-xl md:max-w-1/2 md:text-center"
-        >
-          Real stories from businesses we've helped transform. Discover how our
-          consulting services have made a difference.
-        </p>
-      </div>
-      <ul
-        class="grid min-[498px]:grid-cols-2 md:grid-cols-3 *:min-h-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
-      >
-        <li class="bg-(--color-background) p-4 rounded-xl">
-          <quote
-            >“Their expertise in operational efficiency saved us time and money.
-            We’re running a much leaner, more effective operation now”</quote
-          >
-          <span class="flex items-center gap-3 mt-4">
-            <img
-              src="./assets/media-assets/client-image-1.png"
-              alt="client image"
-              class="size-10 rounded-full object-cover"
-            />
-            <div class="flex flex-col">
-              <h3 class="font-bold">Clare Bamford</h3>
-              <p class="text-sm">@clare.stk</p>
-            </div>
-          </span>
-        </li>
-        <li class="bg-(--color-background) p-4 rounded-xl">
-          <quote
-            >“Their market expansion strategies were exactly what we needed.
-            We’ve successfully entered two new regions with ease.”</quote
-          >
-          <span class="flex items-center gap-3 mt-4">
-            <img
-              src="./assets/media-assets/client-image-2.png"
-              alt="client image"
-              class="size-10 rounded-full object-cover"
-            />
-            <div class="flex flex-col">
-              <h3 class="font-bold">Mark Williams</h3>
-              <p class="text-sm">@mark_grows</p>
-            </div>
-          </span>
-        </li>
-        <li class="bg-(--color-background) p-4 rounded-xl">
-          <quote
-            >“The leadership training we received has transformed our management
-            team. We're more aligned and productive than ever.”</quote
-          >
-          <span class="flex items-center gap-3 mt-4">
-            <img
-              src="./assets/media-assets/client-image-3.png"
-              alt="client image"
-              class="size-10 rounded-full object-cover"
-            />
-            <div class="flex flex-col">
-              <h3 class="font-bold">Samantha Green</h3>
-              <p class="text-sm">@sam_greenlead</p>
-            </div>
-          </span>
-        </li>
-        <li class="bg-(--color-background) p-4 rounded-xl">
-          <quote
-            >“Thanks to their business strategy insights, we’ve seen a 25%
-            increase in our revenue within six months.”</quote
-          >
-          <span class="flex items-center gap-3 mt-4">
-            <img
-              src="./assets/media-assets/client-image-4.png"
-              alt="client image"
-              class="size-10 rounded-full object-cover"
-            />
-            <div class="flex flex-col">
-              <h3 class="font-bold">James O'Connor</h3>
-              <p class="text-sm">@james_ontrack</p>
-            </div>
-          </span>
-        </li>
-        <li class="bg-(--color-background) p-4 rounded-xl">
-          <quote
-            >“Their operational analysis identified inefficiencies we weren’t
-            even aware of. Our processes are now far more streamlined.”</quote
-          >
-          <span class="flex items-center gap-3 mt-4">
-            <img
-              src="./assets/media-assets/client-image-5.png"
-              alt="client image"
-              class="size-10 rounded-full object-cover"
-            />
-            <div class="flex flex-col">
-              <h3 class="font-bold">Laura Knight</h3>
-              <p class="text-sm">@laura_opsmaster</p>
-            </div>
-          </span>
-        </li>
-        <li class="bg-(--color-background) p-4 rounded-xl">
-          <quote
-            >“Their support during our organizational change was invaluable. We
-            navigated a major restructure without disrupting our
-            productivity.”</quote
-          >
-          <span class="flex items-center gap-3 mt-4">
-            <img
-              src="./assets/media-assets/client-image-6.png"
-              alt="client image"
-              class="size-10 rounded-full object-cover"
-            />
-            <div class="flex flex-col">
-              <h3 class="font-bold">Brian Chen</h3>
-              <p class="text-sm">@emma_humanconnect</p>
-            </div>
-          </span>
-        </li>
-      </ul>
-    </section>
-    <section
-      id="pricing"
-      class="container-padding py-24! gap-10 md:gap-5 bg-(--color-primary) grid md:grid-cols-2"
-    >
-      <!-- Pricing writeup -->
-      <article class="py-4 flex flex-col gap-10 justify-between">
-        <div class="w-full flex flex-col gap-5">
-          <h2 class="text-4xl text-(--color-primary-foreground)">
-            Simple, Transparent <br />
-            Pricing
-          </h2>
-          <p class="text-lg text-(--color-background)">
-            One comprehensive plan with all the tools and support your business
-            needs to succeed.
+          <h1 class="text-4xl text-(--color-primary-foreground)">
+            Latest articles
+          </h1>
+          <p class="text-lg font-normal text-(--color-primary-foreground)">
+            Stay up to date with the latest trends, tips, and expert advice from
+            our team of consultants.
           </p>
-
           <button
-            class="liquid_button variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
+            class="liquid_button mt-2 variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
           >
-            Book a consultation
+            Book a call now
             <svg
               width="20"
               height="20"
@@ -529,454 +1004,94 @@
             </svg>
           </button>
         </div>
+      </section>
 
-        <p class="text-base text-(--color-background)">
-          Get full access to our expert consulting services, tailored
-          specifically to your business challenges.
-        </p>
-      </article>
-      <!-- Pricing list -->
-      <article
-        class="bg-(--color-secondary) rounded-xl p-5 md:p-10 flex flex-col gap-5"
-      >
-        <div class="w-full flex flex-col gap-2">
-          <h2 class="text-xl text-(--color-secondary-foreground)">
-            Starting at
-          </h2>
-          <strong class="text-4xl"
-            >$999
-            <sub class="text-sm text-(--color-secondary-foreground) font-normal"
-              >/Monthly</sub
-            ></strong
-          >
-          <hr class="text-(--color-secondary-foreground) mt-3" />
-        </div>
-        <div class="w-full flex flex-col gap-3">
-          <h2 class="text-xl">What You Get</h2>
-          <ul class="w-full flex flex-col gap-3">
-            <li class="flex items-center gap-2">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="Check circle" clip-path="url(#clip0_1_479)">
-                  <path
-                    id="Icon"
-                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                    stroke="#507102"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_1_479">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Custom business strategy development
-            </li>
-            <li class="flex items-center gap-2">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="Check circle" clip-path="url(#clip0_1_479)">
-                  <path
-                    id="Icon"
-                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                    stroke="#507102"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_1_479">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              In-depth operational efficiency analysis
-            </li>
-            <li class="flex items-center gap-2">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="Check circle" clip-path="url(#clip0_1_479)">
-                  <path
-                    id="Icon"
-                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                    stroke="#507102"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_1_479">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Leadership training and development sessions
-            </li>
-            <li class="flex items-center gap-2">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="Check circle" clip-path="url(#clip0_1_479)">
-                  <path
-                    id="Icon"
-                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                    stroke="#507102"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_1_479">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Market expansion consulting
-            </li>
-            <li class="flex items-center gap-2">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="Check circle" clip-path="url(#clip0_1_479)">
-                  <path
-                    id="Icon"
-                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                    stroke="#507102"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_1_479">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Ongoing support and regular performance reviews
-            </li>
-            <li class="flex items-center gap-2">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="Check circle" clip-path="url(#clip0_1_479)">
-                  <path
-                    id="Icon"
-                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                    stroke="#507102"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_1_479">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              Dedicated account manager
-            </li>
-          </ul>
-        </div>
-      </article>
-    </section>
-
-    <section
-      id="articles"
-      class="container-padding py-24! flex flex-col gap-10"
-    >
-      <div class="w-fit md:max-w-3/7 flex flex-col gap-10">
-        <h1 class="text-4xl">Latest articles</h1>
-        <p class="text-xl text-(--color-secondary-foreground)">
-          Stay up to date with the latest trends, tips, and expert advice from
-          our team of consultants.
-        </p>
-      </div>
-      <div
-        class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] lg:grid-cols-3 *:min-h-full *:w-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
-      >
-        <article
-          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden justify-between"
-        >
-          <img
-            src="./assets/media-assets/articles-image-1.png"
-            alt="illustration-graphs-1"
-            class="w-full h-52 md:h-72 object-cover"
-          />
-          <div class="w-full flex flex-col gap-2 px-5 py-3">
-            <h3 class="text-base md:text-xl font-bold">
-              The Importance of Leadership in Organizational Success
-            </h3>
-            <p class="text-sm md:text-base">
-              Explore how strong leadership can drive your company toward
-              greater success.
-            </p>
-            <button
-              class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
-            >
-              Learn More
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="Arrow right">
-                  <path
-                    id="Icon"
-                    d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
-                    stroke="var(--color-secondary-foreground)"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-              </svg>
-            </button>
-          </div>
-        </article>
-        <article
-          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
-        >
-          <img
-            src="./assets/media-assets/articles-image-2.png"
-            alt="illustration-graphs-1"
-            class="w-full h-52 md:h-72 object-cover"
-          />
-          <div class="w-full flex flex-col gap-2 px-5 py-3">
-            <h3 class="text-base md:text-xl font-bold">
-              The Importance of Leadership in Organizational Success
-            </h3>
-            <p class="text-sm md:text-base">
-              Explore how strong leadership can drive your company toward
-              greater success.
-            </p>
-            <button
-              class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
-            >
-              Learn More
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="Arrow right">
-                  <path
-                    id="Icon"
-                    d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
-                    stroke="var(--color-secondary-foreground)"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-              </svg>
-            </button>
-          </div>
-        </article>
-        <article
-          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
-        >
-          <img
-            src="./assets/media-assets/articles-image-3.png"
-            alt="illustration-graphs-1"
-            class="w-full h-52 md:h-72 object-cover"
-          />
-          <div class="w-full flex flex-col gap-2 px-5 py-3">
-            <h3 class="text-base md:text-xl font-bold">
-              The Importance of Leadership in Organizational Success
-            </h3>
-            <p class="text-sm md:text-base">
-              Explore how strong leadership can drive your company toward
-              greater success.
-            </p>
-            <button
-              class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
-            >
-              Learn More
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="Arrow right">
-                  <path
-                    id="Icon"
-                    d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
-                    stroke="var(--color-secondary-foreground)"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-              </svg>
-            </button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section
-      id="cta"
-      class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30"
-    >
-      <div
-        class="w-fit md:max-w-3/7 flex flex-col gap-4 bg-(--color-primary) p-6 rounded-xl"
-      >
-        <h1 class="text-4xl text-(--color-primary-foreground)">
-          Latest articles
+      <!-- FAQ -->
+      <section id="faq" class="container-padding py-24! flex flex-col gap-10">
+        <h1 class="text-2xl md:text-4xl text-(--color-primary)">
+          Frequently Asked Questions
         </h1>
-        <p class="text-lg font-normal text-(--color-primary-foreground)">
-          Stay up to date with the latest trends, tips, and expert advice from
-          our team of consultants.
-        </p>
-        <button
-          class="liquid_button mt-2 variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
-        >
-          Book a call now
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="Arrow right">
-              <path
-                id="Icon"
-                d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
-                stroke="#102D15"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </g>
-          </svg>
-        </button>
-      </div>
-    </section>
-    <section id="faq" class="container-padding py-24! flex flex-col gap-10">
-      <h1 class="text-2xl md:text-4xl text-(--color-primary)">
-        Frequently Asked Questions
-      </h1>
 
-      <ul
-        class="w-full flex flex-col gap-px *:bg-(--color-secondary-foreground) rounded-xl *:p-5 *:first:rounded-t-xl *:last:rounded-b-xl"
-      >
-        <li class="h-fit flex-col text-(--color-background)">
-          <details>
-            <summary>
-              What type of businesses do you work with?
-              <span class="try-toggle"></span>
-            </summary>
-            <div data-details-slot="content">
-              <p>
-                We work with businesses of all sizes, from startups to
-                established enterprises, across a variety of industries. Our
-                solutions are tailored to meet your specific needs.
-              </p>
-            </div>
-          </details>
-        </li>
-        <li class="h-fit flex-col text-(--color-background)">
-          <details>
-            <summary>
-              How do your consulting services work?
-              <span class="try-toggle"></span>
-            </summary>
-            <div data-details-slot="content">
-              <p>
-                We work with businesses of all sizes, from startups to
-                established enterprises, across a variety of industries. Our
-                solutions are tailored to meet your specific needs.
-              </p>
-            </div>
-          </details>
-        </li>
-        <li class="h-fit flex-col text-(--color-background)">
-          <details>
-            <summary>
-              What is the cost of your consulting services?
-              <span class="try-toggle"></span>
-            </summary>
-            <div data-details-slot="content">
-              <p>
-                We work with businesses of all sizes, from startups to
-                established enterprises, across a variety of industries. Our
-                solutions are tailored to meet your specific needs.
-              </p>
-            </div>
-          </details>
-        </li>
-        <li class="h-fit flex-col text-(--color-background)">
-          <details>
-            <summary>
-              How soon can I expect results? <span class="try-toggle"></span>
-            </summary>
-            <div data-details-slot="content">
-              <p>
-                We work with businesses of all sizes, from startups to
-                established enterprises, across a variety of industries. Our
-                solutions are tailored to meet your specific needs.
-              </p>
-            </div>
-          </details>
-        </li>
-        <li class="h-fit flex-col text-(--color-background)">
-          <details>
-            <summary>
-              How do I get started? <span class="try-toggle"></span>
-            </summary>
-            <div data-details-slot="content">
-              <p>
-                We work with businesses of all sizes, from startups to
-                established enterprises, across a variety of industries. Our
-                solutions are tailored to meet your specific needs.
-              </p>
-            </div>
-          </details>
-        </li>
-      </ul>
-    </section>
+        <ul
+          class="w-full flex flex-col gap-px *:bg-(--color-secondary-foreground) rounded-xl *:p-5 *:first:rounded-t-xl *:last:rounded-b-xl"
+        >
+          <li class="h-fit flex-col text-(--color-background)">
+            <details>
+              <summary>
+                What type of businesses do you work with?
+                <span class="try-toggle"></span>
+              </summary>
+              <div data-details-slot="content">
+                <p>
+                  We work with businesses of all sizes, from startups to
+                  established enterprises, across a variety of industries. Our
+                  solutions are tailored to meet your specific needs.
+                </p>
+              </div>
+            </details>
+          </li>
+          <li class="h-fit flex-col text-(--color-background)">
+            <details>
+              <summary>
+                How do your consulting services work?
+                <span class="try-toggle"></span>
+              </summary>
+              <div data-details-slot="content">
+                <p>
+                  We work with businesses of all sizes, from startups to
+                  established enterprises, across a variety of industries. Our
+                  solutions are tailored to meet your specific needs.
+                </p>
+              </div>
+            </details>
+          </li>
+          <li class="h-fit flex-col text-(--color-background)">
+            <details>
+              <summary>
+                What is the cost of your consulting services?
+                <span class="try-toggle"></span>
+              </summary>
+              <div data-details-slot="content">
+                <p>
+                  We work with businesses of all sizes, from startups to
+                  established enterprises, across a variety of industries. Our
+                  solutions are tailored to meet your specific needs.
+                </p>
+              </div>
+            </details>
+          </li>
+          <li class="h-fit flex-col text-(--color-background)">
+            <details>
+              <summary>
+                How soon can I expect results? <span class="try-toggle"></span>
+              </summary>
+              <div data-details-slot="content">
+                <p>
+                  We work with businesses of all sizes, from startups to
+                  established enterprises, across a variety of industries. Our
+                  solutions are tailored to meet your specific needs.
+                </p>
+              </div>
+            </details>
+          </li>
+          <li class="h-fit flex-col text-(--color-background)">
+            <details>
+              <summary>
+                How do I get started? <span class="try-toggle"></span>
+              </summary>
+              <div data-details-slot="content">
+                <p>
+                  We work with businesses of all sizes, from startups to
+                  established enterprises, across a variety of industries. Our
+                  solutions are tailored to meet your specific needs.
+                </p>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </section>
+    </main>
+
     <footer
       class="container-padding py-24! flex flex-col gap-10 bg-(--color-primary)"
     >

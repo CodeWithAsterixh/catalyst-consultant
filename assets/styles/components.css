@@ -11,9 +11,9 @@
   border-radius: var(--infinity-px);
   font-weight: bold;
 }
-.liquid_button.variant-spark{
-    background: var(--color-spark);
-    color: var(--color-primary);
+.liquid_button.variant-spark {
+  background: var(--color-spark);
+  color: var(--color-primary);
 }
 
 @media (width < 48rem) {
@@ -47,43 +47,246 @@
 .container-padding {
   padding: calc(var(--spacing) * 5);
 }
-.hero-image-container{
-    width: 100%;
+.hero-image-container {
+  width: 100%;
 }
-details summary::marker{
-    content: "";
+details summary::marker {
+  content: "";
 }
-details summary{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+details summary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-details summary::after{
-    content: "+";
-    font-weight: bolder;
-    font-size: 2rem;
-    line-height: 1rem;
-    margin-top: -0.25rem;
+details summary::after {
+  content: "+";
+  font-weight: bolder;
+  font-size: 2rem;
+  line-height: 1rem;
+  margin-top: -0.25rem;
 }
-details[open] summary::after{
-    content: "-";
-    font-weight: bolder;
-    font-size: 2rem;
-    line-height: 1rem;
-    margin-top: -0.25rem;
+details[open] summary::after {
+  content: "-";
+  font-weight: bolder;
+  font-size: 2rem;
+  line-height: 1rem;
+  margin-top: -0.25rem;
 }
-details> [data-details-slot="content"]{
-    height: 0px;
-    transition: height 300ms ease-out;
-    overflow: hidden;
+details > [data-details-slot="content"] {
+  height: 0px;
+  transition: height 300ms ease-out;
+  overflow: hidden;
 }
-details[open]> [data-details-slot="content"]{
-    height: auto;
+details[open] > [data-details-slot="content"] {
+  height: auto;
 }
 
-@media (prefers-reduced-motion: no-preference){
-    details[open] [data-details-slot="content"]{
-        interpolate-size: allow-keywords;
-    }
+@media (prefers-reduced-motion: no-preference) {
+  details[open] [data-details-slot="content"] {
+    interpolate-size: allow-keywords;
+  }
+}
+
+.hero_heading {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition-duration: 1s;
+}
+.hero_sub_heading {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition-duration: 1s;
+}
+.hero_shown .hero_heading {
+  opacity: 1;
+  transform: translateX(0);
+}
+.hero_shown .hero_sub_heading {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 200ms;
+}
+
+.hero_cta_button {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition-duration: 1s;
+}
+.hero_shown .hero_cta_button {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 400ms;
+}
+.hero_cta_tagline {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition-duration: 1s;
+}
+.hero_shown .hero_cta_tagline {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 600ms;
+}
+.hero_image {
+  transform: skew(0deg) !important;
+}
+.hero_image img {
+  transform: skew(0deg) !important;
+}
+.hero_shown .hero_image {
+  transform: skew(-5deg) !important;
+  transition-duration: 1s;
+  transition-delay: 200ms;
+}
+.hero_shown .hero_image img {
+  transform: skew(5deg) !important;
+  transition-duration: 1s;
+  transition-delay: 200ms;
+}
+.hero_profile_stats li {
+  transform: rotateX(90deg);
+}
+.hero_shown .hero_profile_stats li {
+  transform: rotateX(0);
+  transition-duration: 500ms;
+}
+.hero_shown .hero_profile_stats li:first-child {
+  transition-delay: 200ms;
+}
+.hero_shown .hero_profile_stats li:nth-child(2) {
+  transition-delay: 400ms;
+}
+.hero_ceo_name > * {
+  transform: translateX(20px);
+  opacity: 0;
+}
+.hero_shown .hero_ceo_name > * {
+  transform: translateX(0);
+  opacity: 1;
+  transition-duration: 500ms;
+}
+.hero_shown .hero_ceo_name > *:first-child {
+  transition-delay: 400ms;
+}
+.hero_shown .hero_ceo_name > *:nth-child(2) {
+  transition-delay: 500ms;
+}
+
+#companies-banner ul li {
+  transform: translateX(calc(calc(var(--index) * 20px) * -1));
+  opacity: 0;
+  transition-duration: 200ms;
+}
+#companies-banner.companies_banner_shown ul li {
+  transform: translateX(0);
+  opacity: 1;
+  transition-delay: calc(var(--index) * 100ms);
+}
+
+#who_we_are h2 {
+  transform: translateY(20px);
+  opacity: 0;
+  transition-duration: 500ms;
+}
+#who_we_are p {
+  transform: translateY(20px);
+  opacity: 0;
+  transition-duration: 500ms;
+}
+
+#who_we_are.who_we_are_shown h2 {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0ms;
+}
+#who_we_are.who_we_are_shown p {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 200ms;
+}
+
+.solutions_heading1_hidden {
+  transform: translateY(20px) !important;
+  opacity: 0;
+}
+.solutions_p_hidden {
+  transform: translateY(20px) !important;
+  opacity: 0;
+}
+.solutions_heading1_shown {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0ms;
+  transition-duration: 500ms;
+}
+.solutions_p_shown {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 200ms;
+  transition-duration: 500ms;
+}
+.solutions_card_hidden {
+  transform: translateX(calc(var(--index) * -5rem)) !important;
+  opacity: 0;
+}
+.solutions_card_shown {
+  transform: translateX(0) !important;
+  opacity: 1;
+  transition-delay: calc(var(--index) * 200ms);
+  transition-duration: 500ms;
+}
+
+.team_writeup_hidden{
+  transform: translateY(-5rem) !important;
+  opacity: 0;
+}
+.team_writeup_shown{
+  transform: translateY(-0) !important;
+  opacity: 1;
+  transition-delay: 200ms;
+  transition-duration: 500ms;
+}
+
+.team_card_hidden {
+  transform: translateX(calc(var(--index) * -5rem)) !important;
+  opacity: 0;
+}
+.team_card_shown {
+  transform: translateX(0) !important;
+  opacity: 1;
+  transition-delay: calc(var(--index) * 200ms);
+  transition-duration: 500ms;
+}
+
+.testimonials_h2_hidden {
+  transform: translateY(2rem);
+  opacity: 0;
+}
+.testimonials_p_hidden {
+  transform: translateY(2rem);
+  opacity: 0;
+}
+.testimonials_h2_shown {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 200ms;
+  transition-duration: 500ms;
+}
+.testimonials_p_shown {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 500ms;
+  transition-duration: 500ms;
+}
+
+.testimonial_card_hidden{
+  transform: translateY(calc(var(--index) * -2rem)) translateX(calc(var(--index) * -1rem));
+  opacity: 0;
+}
+.testimonial_card_shown {
+  transform: translateY(0) translateX(0);
+  opacity: 1;
+  transition-delay: calc(var(--index) * 100ms);
+  transition-duration: 500ms;
 }
