@@ -12,7 +12,11 @@
       class="sticky top-0 z-9999 isolate w-full bg-(--color-secondary) container-padding flex items-center justify-between"
     >
       <!--logo-->
-      <span class="flex items-center justify-center gap-2 w-fit z-10">
+      <span
+        data-scroll-animation="dynamic_toggle"
+        data-animation-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
+        class="flex items-center justify-center gap-2 w-fit z-10 rotate-y-90 opacity-0"
+      >
         <img
           src="assets/media-assets/Logo.svg"
           class="size-5 md:size-7 lg:size-8"
@@ -23,8 +27,10 @@
       </span>
       <!-- nav control for mobile -->
       <button
+        data-scroll-animation="dynamic_toggle"
+        data-scroll-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
         data-toggle-animation="dynamic_toggle"
-        data-animation-variables="{trigger_showClass:'navigation-menu-shown bg-linear-to-b from-(--color-secondary) to-(--color-background)', trigger_removeClass:'navigation-menu-hidden bg-linear-to-b from-(--color-background) to-(--color-secondary)', enterClass: 'nav_menu_opened', leaveClass: 'nav_menu_closed', trigger_receiver: 'navigation_menu'}"
+        data-toggle-variables="{enterClass:'navigation-menu-shown bg-linear-to-b from-(--color-secondary) to-(--color-background)', leaveClass:'navigation-menu-hidden bg-linear-to-b from-(--color-background) to-(--color-secondary)', 'receiver-id': 'navigation_menu'}"
         class="flex *:duration-500 size-7 flex-col justify-center z-999 md:hidden gap-1 *:w-7 *:h-1 *:bg-(--color-foreground)"
       >
         <span></span>
@@ -33,7 +39,7 @@
       </button>
       <!--nav-->
       <div
-        data-trigger-receiver-id="navigation_menu"
+        data-toggle-receiver-id="navigation_menu"
         id="navigation_menu"
         class="w-full h-screen fixed top-0 left-0 md:bg-linear-to-b md:from-transparent md:to-transparent flex items-center justify-center md:justify-end gap-4 container-padding md:gap-0 flex-col md:flex-row md:absolute md:h-full"
       >
@@ -41,7 +47,11 @@
           <ul
             class="header-nav flex flex-col items-center *:text-xl md:*:text-sm lg:*:text-base md:flex-row gap-4 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2"
           >
-            <li>
+            <li
+              data-scroll-animation="dynamic_toggle"
+              data-animation-variables="{enterClass: 'duration-500 delay-200 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
+              class="opacity-0"
+            >
               <a
                 href="#"
                 class="font-medium text-(--color-primary)"
@@ -49,7 +59,11 @@
                 >Service</a
               >
             </li>
-            <li>
+            <li
+              data-scroll-animation="dynamic_toggle"
+              data-animation-variables="{enterClass: 'duration-500 delay-300 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
+              class="opacity-0"
+            >
               <a
                 href="#"
                 class="font-medium text-(--color-primary)"
@@ -57,7 +71,11 @@
                 >Pricing</a
               >
             </li>
-            <li>
+            <li
+              data-scroll-animation="dynamic_toggle"
+              data-animation-variables="{enterClass: 'duration-500 delay-400 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
+              class="opacity-0"
+            >
               <a
                 href="#"
                 class="font-medium text-(--color-primary)"
@@ -65,7 +83,11 @@
                 >Resources</a
               >
             </li>
-            <li>
+            <li
+              data-scroll-animation="dynamic_toggle"
+              data-animation-variables="{enterClass: 'duration-500 delay-500 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
+              class="opacity-0"
+            >
               <a
                 href="#"
                 class="font-medium text-(--color-primary)"
@@ -73,7 +95,11 @@
                 >Testimonials</a
               >
             </li>
-            <li>
+            <li
+              data-scroll-animation="dynamic_toggle"
+              data-animation-variables="{enterClass: 'duration-500 delay-600 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
+              class="opacity-0"
+            >
               <a
                 href="#"
                 class="font-medium text-(--color-primary)"
@@ -85,7 +111,9 @@
         </nav>
         <!--cta-->
         <button
-          class="liquid_button text-sm text-nowrap md:text-sm lg:text-lg"
+          data-scroll-animation="dynamic_toggle"
+          data-scroll-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="liquid_button text-sm text-nowrap md:text-sm lg:text-lg rotate-y-90 opacity-0"
           data-hover-animation="character_animation, dynamic_toggle"
           data-animation-variables="{text:'Book a consultation', variant:'char', enterClass: 'liquid_button-enter', leaveClass: 'liquid_button-leave'}"
         >
@@ -598,17 +626,27 @@
         <!-- Pricing writeup -->
         <article class="py-4 flex flex-col gap-10 justify-between">
           <div class="w-full flex flex-col gap-5">
-            <h2 class="text-4xl text-(--color-primary-foreground)">
+            <h2
+              data-scroll-animation="dynamic_toggle"
+              data-animation-variables="{enterClass: 'pricing_heading_shown', leaveClass: 'pricing_heading_hidden', type: 'scrollTo', threshold: 0.2}"
+              class="text-4xl text-(--color-primary-foreground) pricing_heading_hidden"
+            >
               Simple, Transparent <br />
               Pricing
             </h2>
-            <p class="text-lg text-(--color-background)">
+            <p
+              data-scroll-animation="dynamic_toggle"
+              data-animation-variables="{enterClass: 'pricing_sub_heading_shown', leaveClass: 'pricing_sub_heading_hidden', type: 'scrollTo', threshold: 0.2}"
+              class="text-lg text-(--color-background) pricing_sub_heading_hidden"
+            >
               One comprehensive plan with all the tools and support your
               business needs to succeed.
             </p>
 
             <button
-              class="liquid_button variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
+              data-scroll-animation="dynamic_toggle"
+              data-animation-variables="{enterClass: 'pricing_cta_button_shown', leaveClass: 'pricing_cta_button_hidden', type: 'scrollTo', threshold: 0.2}"
+              class="liquid_button pricing_cta_button_hidden variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
             >
               Book a consultation
               <svg
@@ -632,14 +670,20 @@
             </button>
           </div>
 
-          <p class="text-base text-(--color-background)">
+          <p
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'pricing_paragraph_shown', leaveClass: 'pricing_paragraph_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="text-base text-(--color-background) pricing_paragraph_hidden"
+          >
             Get full access to our expert consulting services, tailored
             specifically to your business challenges.
           </p>
         </article>
         <!-- Pricing list -->
         <article
-          class="bg-(--color-secondary) rounded-xl p-5 md:p-10 flex flex-col gap-5"
+          data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-300 opacity-100', leaveClass: '-translate-x-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-secondary) rounded-xl p-5 md:p-10 flex flex-col gap-5 -translate-x-5 opacity-0"
         >
           <div class="w-full flex flex-col gap-2">
             <h2 class="text-xl text-(--color-secondary-foreground)">
@@ -824,8 +868,18 @@
         class="container-padding py-24! flex flex-col gap-10"
       >
         <div class="w-fit md:max-w-3/7 flex flex-col gap-10">
-          <h1 class="text-4xl">Latest articles</h1>
-          <p class="text-xl text-(--color-secondary-foreground)">
+          <h1
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="text-4xl translate-y-5 opacity-0"
+          >
+            Latest articles
+          </h1>
+          <p
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-400 opacity-100', leaveClass: 'translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="text-xl text-(--color-secondary-foreground) translate-y-5 opacity-0"
+          >
             Stay up to date with the latest trends, tips, and expert advice from
             our team of consultants.
           </p>
@@ -834,7 +888,9 @@
           class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] lg:grid-cols-3 *:min-h-full *:w-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
         >
           <article
-            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden justify-between"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-200 opacity-100', leaveClass: '10translate-x-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden justify-between -translate-x-20 opacity-0"
           >
             <img
               src="./assets/media-assets/articles-image-1.png"
@@ -877,7 +933,9 @@
             </div>
           </article>
           <article
-            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-200 opacity-100', leaveClass: '-translate-x-10 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between -translate-x-30 opacity-0"
           >
             <img
               src="./assets/media-assets/articles-image-2.png"
@@ -920,7 +978,9 @@
             </div>
           </article>
           <article
-            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between"
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-200 opacity-100', leaveClass: '-translate-x-10 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between -translate-x-40 opacity-0"
           >
             <img
               src="./assets/media-assets/articles-image-3.png"
@@ -973,14 +1033,24 @@
         <div
           class="w-fit md:max-w-3/7 flex flex-col gap-4 bg-(--color-primary) p-6 rounded-xl"
         >
-          <h1 class="text-4xl text-(--color-primary-foreground)">
+          <h1
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'scale-100 duration-500 delay-200 opacity-100', leaveClass: 'scale-50 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="text-4xl text-(--color-primary-foreground) scale-50 opacity-0"
+          >
             Latest articles
           </h1>
-          <p class="text-lg font-normal text-(--color-primary-foreground)">
+          <p
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'scale-100 duration-500 delay-200 opacity-100', leaveClass: 'scale-50 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="text-lg font-normal text-(--color-primary-foreground) scale-50 opacity-0"
+          >
             Stay up to date with the latest trends, tips, and expert advice from
             our team of consultants.
           </p>
           <button
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'scale-100 duration-500 delay-200 opacity-100', leaveClass: 'scale-50 opacity-0', type: 'scrollTo', threshold: 0.2}"
             class="liquid_button mt-2 variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
           >
             Book a call now
@@ -1008,14 +1078,22 @@
 
       <!-- FAQ -->
       <section id="faq" class="container-padding py-24! flex flex-col gap-10">
-        <h1 class="text-2xl md:text-4xl text-(--color-primary)">
+        <h1
+          data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="text-2xl md:text-4xl text-(--color-primary) translate-y-5 opacity-0"
+        >
           Frequently Asked Questions
         </h1>
 
         <ul
           class="w-full flex flex-col gap-px *:bg-(--color-secondary-foreground) rounded-xl *:p-5 *:first:rounded-t-xl *:last:rounded-b-xl"
         >
-          <li class="h-fit flex-col text-(--color-background)">
+          <li
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-200 opacity-100', leaveClass: '-translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="h-fit flex-col text-(--color-background)"
+          >
             <details>
               <summary>
                 What type of businesses do you work with?
@@ -1030,7 +1108,11 @@
               </div>
             </details>
           </li>
-          <li class="h-fit flex-col text-(--color-background)">
+          <li
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-400 opacity-100', leaveClass: '-translate-y-7 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="h-fit flex-col text-(--color-background)"
+          >
             <details>
               <summary>
                 How do your consulting services work?
@@ -1045,7 +1127,11 @@
               </div>
             </details>
           </li>
-          <li class="h-fit flex-col text-(--color-background)">
+          <li
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-600 opacity-100', leaveClass: '-translate-y-9 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="h-fit flex-col text-(--color-background)"
+          >
             <details>
               <summary>
                 What is the cost of your consulting services?
@@ -1060,7 +1146,11 @@
               </div>
             </details>
           </li>
-          <li class="h-fit flex-col text-(--color-background)">
+          <li
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-800 opacity-100', leaveClass: '-translate-y-11 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="h-fit flex-col text-(--color-background)"
+          >
             <details>
               <summary>
                 How soon can I expect results? <span class="try-toggle"></span>
@@ -1074,7 +1164,11 @@
               </div>
             </details>
           </li>
-          <li class="h-fit flex-col text-(--color-background)">
+          <li
+            data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-1000 opacity-100', leaveClass: '-translate-y-13 opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="h-fit flex-col text-(--color-background)"
+          >
             <details>
               <summary>
                 How do I get started? <span class="try-toggle"></span>
@@ -1096,7 +1190,9 @@
       class="container-padding py-24! flex flex-col gap-10 bg-(--color-primary)"
     >
       <section
-        class="w-full flex flex-col gap-10 bg-(--color-secondary-foreground) text-(--color-background) p-5 md:p-10 rounded-xl"
+        data-scroll-animation="dynamic_toggle"
+        data-animation-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
+        class="w-full flex flex-col gap-10 bg-(--color-secondary-foreground) text-(--color-background) p-5 md:p-10 rounded-xl rotate-y-90 opacity-0"
       >
         <div
           class="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10"

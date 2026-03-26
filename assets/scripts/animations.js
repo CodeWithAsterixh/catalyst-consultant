@@ -50,7 +50,7 @@ function characterAnimation(element, type, variables) {
     const span = document.createElement("span");
     span.ariaHidden = "true";
     span.style.setProperty("--index", index);
-    span.textContent = ele;
+    span.textContent = ele === " " ? "\u00A0" : ele;
     return span;
   });
 
@@ -67,38 +67,47 @@ function characterAnimation(element, type, variables) {
  */
 
 function dynamicToggle(element, type, variables) {
+
   const {
     enterClass,
     leaveClass,
-    trigger_receiver,
-    trigger_showClass,
-    trigger_removeClass,
+    "toggle-receiver-id": toggle_receiver,
+    "toggle-enterClass": toggleShowClass,
+    "toggle-leaveClass": toggleRemoveClass,
+    "scroll-enterClass": scrollEnterClass,
+    "scroll-leaveClass": scrollLeaveClass,
   } = variables;
-  if (type === "enter" && enterClass) {
-    element.classList.remove(...clsx_stringarray([enterClass, leaveClass]));
-    element.classList.add(...clsx_stringarray(enterClass));
-  } else if (type === "leave" && leaveClass) {
-    element.classList.remove(...clsx_stringarray([enterClass, leaveClass]));
-    element.classList.add(...clsx_stringarray(leaveClass));
+  if (type === "enter" && (scrollEnterClass || enterClass)) {
+    element.classList.remove(
+      ...clsx_stringarray(
+        [scrollEnterClass || enterClass, scrollLeaveClass || leaveClass].flat(),
+      ),
+    );
+    element.classList.add(...clsx_stringarray(scrollEnterClass || enterClass));
+  } else if (type === "leave" && (scrollLeaveClass || leaveClass)) {
+    element.classList.remove(
+      ...clsx_stringarray(
+        [scrollEnterClass || enterClass, scrollLeaveClass || leaveClass].flat(),
+      ),
+    );
+    element.classList.add(...clsx_stringarray(scrollLeaveClass || leaveClass));
   }
-  if (trigger_receiver) {
-    const triggerReveiverElement = document.querySelector(
-      `[data-trigger-receiver-id=${trigger_receiver}]`,
+  if (toggle_receiver) {
+    const toggleReveiverElement = document.querySelector(
+      `[data-toggle-receiver-id=${toggle_receiver}]`,
     );
 
-    if (type === "enter" && trigger_showClass) {
-      triggerReveiverElement.classList.remove(
-        ...clsx_stringarray([trigger_removeClass, trigger_showClass]),
+    if (type === "enter" && toggleShowClass) {
+      toggleReveiverElement.classList.remove(
+        ...clsx_stringarray([toggleRemoveClass, toggleShowClass]),
       );
-      triggerReveiverElement.classList.add(
-        ...clsx_stringarray(trigger_showClass),
+      toggleReveiverElement.classList.add(...clsx_stringarray(toggleShowClass));
+    } else if (type === "leave" && toggleRemoveClass) {
+      toggleReveiverElement.classList.remove(
+        ...clsx_stringarray([toggleRemoveClass, toggleShowClass]),
       );
-    } else if (type === "leave" && trigger_removeClass) {
-      triggerReveiverElement.classList.remove(
-        ...clsx_stringarray([trigger_removeClass, trigger_showClass]),
-      );
-      triggerReveiverElement.classList.add(
-        ...clsx_stringarray(trigger_removeClass),
+      toggleReveiverElement.classList.add(
+        ...clsx_stringarray(toggleRemoveClass),
       );
     }
   }
@@ -111,7 +120,11 @@ function dynamicToggle(element, type, variables) {
  * This function is a utility function that can be used to conditionally combine class names based on certain conditions. It takes a string of class names and returns a single string that can be applied to an element's class attribute.
  */
 function clsx_stringarray(string) {
-  const classes = Array.isArray(string) ? string.join(" ").split(" ").filter(Boolean) : string ? string.split(" ").filter(Boolean) : [];
+  const classes = Array.isArray(string)
+    ? string.join(" ").split(" ").filter(Boolean)
+    : string
+      ? string.split(" ").filter(Boolean)
+      : [];
   return classes;
 }
 
@@ -166,7 +179,7 @@ function useIntersectionObserver(element, options = {}, animationFunction) {
  * @param {(element: HTMLElement, type: TimelineType, variables: Record<string, string|number|array|boolean>) => void} animationFunction
  * @param {Record<string, string|number|array|boolean>} animationVariables
  * @returns {void}
- * This function runs the specified animation function on the given element. It can be used to trigger animations based on user interactions or other events.
+ * This function runs the specified animation function on the given element. It can be used to toggle animations based on user interactions or other events.
  */
 function runAnimation(
   element,
@@ -174,42 +187,71 @@ function runAnimation(
   animationFunction,
   animationVariables = {},
 ) {
+  const styleOnlyVariables = Object.keys(animationVariables).filter((key) =>
+    key.includes(`${animationStyle}`),
+  );
+  const styleOnlyVariablesPrefixed = styleOnlyVariables.reduce((acc, key) => {
+    acc[key] = animationVariables[key];
+    return acc;
+  }, {});
+  const variables =
+    Object.keys(styleOnlyVariablesPrefixed) > 0
+      ? styleOnlyVariablesPrefixed
+      : animationVariables;
+
   switch (animationStyle) {
     case "hover":
       ["enter", "leave"].forEach((eventType) => {
         element.addEventListener(`mouse${eventType}`, () => {
-          animationFunction(element, eventType, animationVariables);
+          animationFunction(element, eventType, variables);
         });
       });
       break;
     case "play":
-      animationFunction(element, "enter", animationVariables);
+      animationFunction(element, "enter", variables);
       break;
     case "toggle":
       let toggled = false;
       element.addEventListener("click", () => {
         toggled = !toggled;
         const type = toggled ? "enter" : "leave";
-        animationFunction(element, type, animationVariables);
+        animationFunction(element, type, variables);
       });
       break;
     case "scroll":
-      useIntersectionObserver(element, animationVariables, animationFunction);
+      useIntersectionObserver(element, variables, animationFunction);
       break;
   }
 }
 
 /**
  * @param {HTMLElement} element
+ * @param {"hover"|"play"|"toggle"|"scroll"} style
  * @returns {Record<string, string|number|array|boolean>}
  */
-function getVariables(element) {
+function getVariables(element, style) {
   const animationVariables =
     element.getAttribute("data-animation-variables") || "{}";
-  const fixedJson = animationVariables
+  const fixedAnimationVariableJson = animationVariables
     .replace(/'/g, '"')
     .replace(/(\w+):/g, '"$1":');
-  return JSON.parse(fixedJson);
+  const styleOnlyVariables =
+    element.getAttribute(`data-${style}-variables`) || "{}";
+  const fixedStyleOnlyVariablesJson = JSON.parse(
+    styleOnlyVariables.replace(/'/g, '"').replace(/(\w+):/g, '"$1":'),
+  );
+  const styleOnlyVariablesPrefixed = Object.keys(
+    fixedStyleOnlyVariablesJson,
+  ).reduce((acc, key) => {
+    acc[`${style}-${key}`] = fixedStyleOnlyVariablesJson[key];
+    return acc;
+  }, {});
+  const variables = Object.assign(
+    JSON.parse(fixedAnimationVariableJson),
+    styleOnlyVariablesPrefixed,
+  );
+
+  return variables;
 }
 export function loadAnimations() {
   const availableAnimations = {
@@ -227,7 +269,7 @@ export function loadAnimations() {
       const animationType = element
         .getAttribute(`data-${state}-animation`)
         .split(", ");
-      const animationVariables = getVariables(element);
+      const animationVariables = getVariables(element, state);
       if (animationType.length > 0) {
         animationType.forEach((type) => {
           if (availableAnimations[type]) {
