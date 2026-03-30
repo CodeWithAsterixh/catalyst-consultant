@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import { motionLyte } from 'motion-lyte.js/vite'
+import { motionLyte } from 'motion-lyte-js/vite'
 
 export default defineConfig({
   // Root directory of the project

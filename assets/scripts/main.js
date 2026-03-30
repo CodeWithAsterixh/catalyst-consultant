@@ -1,3 +1,3 @@
-import { loadAnimations } from 'motion-lyte.js'
+import { loadAnimations } from 'motion-lyte-js'
 
 loadAnimations()
