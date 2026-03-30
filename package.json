@@ -1,0 +1,13 @@
+{
+  "name": "catalyst-advisor",
+  "version": "1.0.0",
+  "description": "Expert Business Consulting Services",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "motion-lyte.js": "file:../motion-lyte.js",
+    "serve": "^14.2.6"
+  }
+}

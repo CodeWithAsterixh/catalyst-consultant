@@ -1,0 +1,61 @@
+{
+  "version": 1.1,
+  "html": {
+    "attributes": [
+      {
+        "name": "data-hover-animation",
+        "description": "Triggered on mouseenter / mouseleave. Values: comma-separated animation names.",
+        "valueSet": "animations"
+      },
+      {
+        "name": "data-play-animation",
+        "description": "Triggered immediately on page load. Values: comma-separated animation names.",
+        "valueSet": "animations"
+      },
+      {
+        "name": "data-toggle-animation",
+        "description": "Triggered on click. Values: comma-separated animation names.",
+        "valueSet": "animations"
+      },
+      {
+        "name": "data-scroll-animation",
+        "description": "Triggered when element is scrolled into view. Values: comma-separated animation names.",
+        "valueSet": "animations"
+      },
+      {
+        "name": "data-animation-variables",
+        "description": "JSON string for global animation configuration. Schema: {enterClass?, leaveClass?, prefix?, text?, variant?, type?, threshold?, receiver-id?}"
+      },
+      {
+        "name": "data-hover-variables",
+        "description": "JSON string for hover-specific configuration. Overrides global variables."
+      },
+      {
+        "name": "data-play-variables",
+        "description": "JSON string for play-specific configuration. Overrides global variables."
+      },
+      {
+        "name": "data-toggle-variables",
+        "description": "JSON string for toggle-specific configuration. Overrides global variables."
+      },
+      {
+        "name": "data-scroll-variables",
+        "description": "JSON string for scroll-specific configuration. Overrides global variables."
+      },
+      {
+        "name": "data-toggle-receiver-id",
+        "description": "Unique ID for identifying elements that should receive toggled classes from a dynamic_toggle trigger."
+      }
+    ],
+    "valueSets": [
+      {
+        "name": "animations",
+        "values": [
+          { "name": "underline_animation", "description": "Adds an animated underline effect." },
+          { "name": "character_animation", "description": "Splits text and animates characters individually." },
+          { "name": "dynamic_toggle", "description": "Toggles classes based on trigger state." }
+        ]
+      }
+    ]
+  }
+}

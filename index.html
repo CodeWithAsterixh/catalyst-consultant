@@ -1,1394 +1,922 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="./assets/styles/root.css" />
-    <title>Catalyst Advisor | Expert Business Consulting Services</title>
-  </head>
-  <body>
-    <header
-      class="sticky top-0 z-9999 isolate w-full bg-(--color-secondary) container-padding flex items-center justify-between"
-    >
-      <!--logo-->
-      <span
-        data-scroll-animation="dynamic_toggle"
-        data-animation-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
-        class="flex items-center justify-center gap-2 w-fit z-10 rotate-y-90 opacity-0"
-      >
-        <img
-          src="assets/media-assets/Logo.svg"
-          class="size-5 md:size-7 lg:size-8"
-        />
-        <h1 class="text-xl md:text-sm lg:text-2xl font-bold">
-          Catalyst Advisor
-        </h1>
-      </span>
-      <!-- nav control for mobile -->
-      <button
-        data-scroll-animation="dynamic_toggle"
-        data-scroll-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
-        data-toggle-animation="dynamic_toggle"
-        data-toggle-variables="{enterClass:'navigation-menu-shown bg-linear-to-b from-(--color-secondary) to-(--color-background)', leaveClass:'navigation-menu-hidden bg-linear-to-b from-(--color-background) to-(--color-secondary)', 'receiver-id': 'navigation_menu'}"
-        class="flex *:duration-500 size-7 flex-col justify-center z-999 md:hidden gap-1 *:w-7 *:h-1 *:bg-(--color-foreground)"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <!--nav-->
-      <div
-        data-toggle-receiver-id="navigation_menu"
-        id="navigation_menu"
-        class="w-full h-screen fixed top-0 left-0 md:bg-linear-to-b md:from-transparent md:to-transparent flex items-center justify-center md:justify-end gap-4 container-padding md:gap-0 flex-col md:flex-row md:absolute md:h-full"
-      >
-        <nav>
-          <ul
-            class="header-nav flex flex-col items-center *:text-xl md:*:text-sm lg:*:text-base md:flex-row gap-4 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2"
-          >
-            <li
-              data-scroll-animation="dynamic_toggle"
-              data-animation-variables="{enterClass: 'duration-500 delay-200 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
-              class="opacity-0"
-            >
-              <a
-                href="#"
-                class="font-medium text-(--color-primary)"
-                data-hover-animation="underline_animation"
-                >Service</a
-              >
-            </li>
-            <li
-              data-scroll-animation="dynamic_toggle"
-              data-animation-variables="{enterClass: 'duration-500 delay-300 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
-              class="opacity-0"
-            >
-              <a
-                href="#"
-                class="font-medium text-(--color-primary)"
-                data-hover-animation="underline_animation"
-                >Pricing</a
-              >
-            </li>
-            <li
-              data-scroll-animation="dynamic_toggle"
-              data-animation-variables="{enterClass: 'duration-500 delay-400 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
-              class="opacity-0"
-            >
-              <a
-                href="#"
-                class="font-medium text-(--color-primary)"
-                data-hover-animation="underline_animation"
-                >Resources</a
-              >
-            </li>
-            <li
-              data-scroll-animation="dynamic_toggle"
-              data-animation-variables="{enterClass: 'duration-500 delay-500 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
-              class="opacity-0"
-            >
-              <a
-                href="#"
-                class="font-medium text-(--color-primary)"
-                data-hover-animation="underline_animation"
-                >Testimonials</a
-              >
-            </li>
-            <li
-              data-scroll-animation="dynamic_toggle"
-              data-animation-variables="{enterClass: 'duration-500 delay-600 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
-              class="opacity-0"
-            >
-              <a
-                href="#"
-                class="font-medium text-(--color-primary)"
-                data-hover-animation="underline_animation"
-                >FAQ</a
-              >
-            </li>
-          </ul>
-        </nav>
-        <!--cta-->
-        <button
-          data-scroll-animation="dynamic_toggle"
-          data-scroll-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
-          class="liquid_button text-sm text-nowrap md:text-sm lg:text-lg rotate-y-90 opacity-0"
-          data-hover-animation="character_animation, dynamic_toggle"
-          data-animation-variables="{text:'Book a consultation', variant:'char', enterClass: 'liquid_button-enter', leaveClass: 'liquid_button-leave'}"
-        >
-          Book a consultation
-        </button>
-      </div>
-    </header>
+<html lang="en">
 
-    <main>
-      <!-- hero -->
-      <section
-        id="hero"
-        data-scroll-animation="dynamic_toggle"
-        data-animation-variables="{enterClass: 'hero_shown', leaveClass: 'hero_hidden', type: 'scrollTo'}"
-        class="w-full h-fit container-padding grid gap-5 md:gap-0 md:grid-cols-[3fr_2fr]"
-      >
-        <!-- writeup -->
-        <article class="flex flex-col gap-8 h-full justify-center">
-          <div class="w-full flex flex-col gap-6">
-            <h1
-              class="hero_heading text-4xl sm:text-6xl md:text-4xl lg:text-6xl leading-tight font-bold"
-            >
-              Unlock Your Business Potential with Expert Consulting
-            </h1>
-            <p
-              class="hero_sub_heading text-lg sm:text-2xl md:text-lg lg:text-2xl max-w-5/6 text-(--color-secondary-foreground)"
-            >
-              Tailored strategies to elevate your business and drive growth
-            </p>
-          </div>
-          <div class="w-full flex flex-col gap-6">
-            <button
-              class="liquid_button hero_cta_button text-sm text-nowrap md:text-sm lg:text-lg"
-              data-hover-animation="character_animation, dynamic_toggle"
-              data-animation-variables="{text:'Book a consultation', variant:'char', enterClass: 'liquid_button-enter', leaveClass: 'liquid_button-leave'}"
-            >
-              Book a consultation
-            </button>
-            <p
-              class="hero_cta_tagline text-sm lg:text-lg text-(--color-secondary-foreground) flex items-center justify-start gap-2"
-            >
-              <img
-                src="./assets/media-assets/GiftIcon.svg"
-                alt="gift-icon"
-                class="size-4 lg:size-6"
-              />
-              Helping 200+ companies achieve their business goals.
-            </p>
-          </div>
-        </article>
-        <!-- illustration -->
-        <article>
-          <div
-            class="relative isolate w-full h-full bg-(--color-secondary) rounded-4xl"
-          >
-            <!-- ceo image -->
-            <span
-              class="size-full hero_image scale-95 md:scale-100 isolate z-1 block -skew-5 overflow-hidden rounded-4xl"
-            >
-              <img
-                src="./assets/media-assets/ceo-image.jpg"
-                alt="Ceo Handerson Lee image sitting with pc and smiling"
-                class="size-full object-cover max-h-[70vh] scale-110 skew-5"
-              />
-              <div
-                class="absolute z-0 bottom-0 right-0 h-32 w-60 bg-(--color-background) blur-xl rounded-l-[50%]"
-              ></div>
-            </span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="./assets/styles/root.css" />
+  <title>Catalyst Advisor | Expert Business Consulting Services</title>
+  <script type="importmap">
+      {
+        "imports": {
+          "motion-lyte.js": "./node_modules/motion-lyte.js/animations/index.js"
+        }
+      }
+    </script>
+</head>
 
-            <!-- stats -->
-            <ul
-              class="absolute hero_profile_stats z-2 flex flex-col gap-2 bottom-10 md:-left-10 lg:-left-20"
-            >
-              <li
-                class="min-w-32 lg:min-w-40 px-4 py-1 flex flex-col bg-(--color-secondary) text-(--color-secondary-foreground) rounded-r-lg md:rounded-lg"
-              >
-                <h3 class="text-4xl font-bold">80%</h3>
-                <p class="text-sm">Success Rate</p>
-              </li>
-              <li
-                class="min-w-32 lg:min-w-40 px-4 py-1 flex flex-col bg-(--color-secondary) text-(--color-secondary-foreground) rounded-r-lg md:rounded-lg"
-              >
-                <h3 class="text-4xl font-bold">500+</h3>
-                <p class="text-sm">Satisfaction Clients</p>
-              </li>
-            </ul>
-            <!-- CEO name -->
-            <span
-              class="hero_ceo_name flex z-3 flex-col absolute bottom-12 right-4"
-            >
-              <h3 class="text-xl lg:text-3xl font-bold">Handerson Lee</h3>
-              <p class="text-xs lg:text-sm">CEO of catalyst advisor</p>
-            </span>
-          </div>
-        </article>
-      </section>
-
-      <!-- companies banner -->
-      <section
-        data-scroll-animation="dynamic_toggle"
-        data-animation-variables="{enterClass: 'companies_banner_shown', leaveClass: 'companies_banner_hidden', type: 'scrollTo', threshold: 0.5}"
-        id="companies-banner"
-        class="w-full overflow-hidden py-24"
-      >
-        <ul class="max-w-[80%] flex gap-6 items-center justify-center mx-auto">
-          <li class="shrink-0 md:shrink" style="--index: 1">
-            <img
-              src="./assets/media-assets/Logo-demo-componies-1.png"
-              alt="sample company logo 1"
-              class="h-6 lg:h-10 object-contain"
-            />
+<body>
+  <header
+    class="sticky top-0 z-9999 isolate w-full bg-(--color-secondary) container-padding flex items-center justify-between">
+    <!--logo-->
+    <span data-scroll-animation="dynamic_toggle"
+      data-animation-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
+      class="flex items-center justify-center gap-2 w-fit z-10 rotate-y-90 opacity-0">
+      <img src="assets/media-assets/Logo.svg" class="size-5 md:size-7 lg:size-8" alt="Catalyst Advisor Logo" />
+      <h1 class="text-xl md:text-sm lg:text-2xl font-bold">
+        Catalyst Advisor
+      </h1>
+    </span>
+    <!-- nav control for mobile -->
+    <button data-scroll-animation="dynamic_toggle"
+      data-scroll-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
+      data-toggle-animation="dynamic_toggle"
+      data-toggle-variables="{enterClass:'navigation-menu-shown bg-linear-to-b from-(--color-secondary) to-(--color-background)', leaveClass:'navigation-menu-hidden bg-linear-to-b from-(--color-background) to-(--color-secondary)', 'receiver-id': 'navigation_menu'}"
+      class="flex *:duration-500 size-7 flex-col justify-center z-999 md:hidden gap-1 *:w-7 *:h-1 *:bg-(--color-foreground)"
+      aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <!--nav-->
+    <div data-toggle-receiver-id="navigation_menu" id="navigation_menu"
+      class="w-full h-screen fixed top-0 left-0 md:bg-linear-to-b md:from-transparent md:to-transparent flex items-center justify-center md:justify-end gap-4 container-padding md:gap-0 flex-col md:flex-row md:absolute md:h-full">
+      <nav aria-label="Primary">
+        <ul
+          class="header-nav flex flex-col items-center *:text-xl md:*:text-sm lg:*:text-base md:flex-row gap-4 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2">
+          <li data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'duration-500 delay-200 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="opacity-0">
+            <a href="#" class="font-medium text-(--color-primary)"
+              data-hover-animation="underline_animation">Service</a>
           </li>
-          <li class="shrink-0 md:shrink" style="--index: 2">
-            <img
-              src="./assets/media-assets/Logo-demo-componies-2.png"
-              alt="sample company logo 2"
-              class="h-6 lg:h-10 object-contain"
-            />
+          <li data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'duration-500 delay-300 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="opacity-0">
+            <a href="#" class="font-medium text-(--color-primary)"
+              data-hover-animation="underline_animation">Pricing</a>
           </li>
-          <li class="shrink-0 md:shrink" style="--index: 3">
-            <img
-              src="./assets/media-assets/Logo-demo-componies-3.png"
-              alt="sample company logo 3"
-              class="h-6 lg:h-10 object-contain"
-            />
+          <li data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'duration-500 delay-400 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="opacity-0">
+            <a href="#" class="font-medium text-(--color-primary)"
+              data-hover-animation="underline_animation">Resources</a>
           </li>
-          <li class="shrink-0 md:shrink" style="--index: 4">
-            <img
-              src="./assets/media-assets/Logo-demo-componies-4.png"
-              alt="sample company logo 4"
-              class="h-6 lg:h-10 object-contain"
-            />
+          <li data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'duration-500 delay-500 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="opacity-0">
+            <a href="#" class="font-medium text-(--color-primary)"
+              data-hover-animation="underline_animation">Testimonials</a>
           </li>
-          <li class="shrink-0 md:shrink" style="--index: 5">
-            <img
-              src="./assets/media-assets/Logo-demo-componies-5.png"
-              alt="sample company logo 5"
-              class="h-6 lg:h-10 object-contain"
-            />
-          </li>
-          <li class="shrink-0 md:shrink" style="--index: 6">
-            <img
-              src="./assets/media-assets/Logo-demo-componies-6.png"
-              alt="sample company logo 6"
-              class="h-6 lg:h-10 object-contain"
-            />
-          </li>
-          <li class="shrink-0 md:shrink" style="--index: 7">
-            <img
-              src="./assets/media-assets/Logo-demo-componies-7.png"
-              alt="sample company logo 7"
-              class="h-6 lg:h-10 object-contain"
-            />
+          <li data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'duration-500 delay-600 opacity-100', leaveClass: 'opacity-0', type: 'scrollTo', threshold: 0.2}"
+            class="opacity-0">
+            <a href="#" class="font-medium text-(--color-primary)" data-hover-animation="underline_animation">FAQ</a>
           </li>
         </ul>
-      </section>
+      </nav>
+      <!--cta-->
+      <button data-scroll-animation="dynamic_toggle"
+        data-scroll-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
+        class="liquid_button text-sm text-nowrap md:text-sm lg:text-lg rotate-y-90 opacity-0"
+        data-hover-animation="character_animation, dynamic_toggle"
+        data-animation-variables="{text:'Book a consultation', variant:'char', enterClass: 'liquid_button-enter', leaveClass: 'liquid_button-leave'}">
+        Book a consultation
+      </button>
+    </div>
+  </header>
 
-      <!-- who we are -->
-      <section
-        id="who_we_are"
-        class="container-padding py-24! bg-(--color-primary)"
-        data-scroll-animation="dynamic_toggle"
-        data-animation-variables="{enterClass: 'who_we_are_shown', leaveClass: 'who_we_are_hidden', type: 'scrollTo', threshold: 0.5}"
-      >
-        <h2 class="text-(--color-background)">Who we are?</h2>
-        <p class="text-(--color-primary-foreground) text-xl md:max-w-1/2">
-          we are driven by a passion for helping businesses thrive. With decades
-          of experience and a commitment to excellence, our team is ready to
-          guide you through every challenge.
-        </p>
-      </section>
-
-      <!-- solutions -->
-      <section
-        id="solutions"
-        class="container-padding py-24! flex flex-col gap-10"
-      >
-        <div class="w-fit md:max-w-3/7 flex flex-col gap-10">
-          <h1
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'solutions_heading1_shown', leaveClass: 'solutions_heading1_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="text-4xl solutions_heading1_hidden"
-          >
-            Tailored Solutions for Every Challenge
+  <main>
+    <!-- hero -->
+    <section id="hero" data-scroll-animation="dynamic_toggle"
+      data-animation-variables="{enterClass: 'hero_shown', leaveClass: 'hero_hidden', type: 'scrollTo'}"
+      class="w-full h-fit container-padding grid gap-5 md:gap-0 md:grid-cols-[3fr_2fr]">
+      <!-- writeup -->
+      <article class="flex flex-col gap-8 h-full justify-center">
+        <div class="w-full flex flex-col gap-6">
+          <h1 class="hero_heading text-4xl sm:text-6xl md:text-4xl lg:text-6xl leading-tight font-bold">
+            Unlock Your Business Potential with Expert Consulting
           </h1>
           <p
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'solutions_p_shown', leaveClass: 'solutions_p_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="text-xl text-(--color-secondary-foreground) solutions_p_hidden"
-          >
-            We provide custom solutions that address your specific business
-            needs. From strategy to execution, we focus on delivering measurable
-            results.
+            class="hero_sub_heading text-lg sm:text-2xl md:text-lg lg:text-2xl max-w-5/6 text-(--color-secondary-foreground)">
+            Tailored strategies to elevate your business and drive growth
           </p>
         </div>
-        <ul
-          class="grid min-[498px]:grid-cols-2 md:grid-cols-3 *:min-h-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
-        >
-          <li
-            style="--index: 1"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'solutions_card_shown', leaveClass: 'solutions_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3 items-center justify-between solutions_card_hidden"
-          >
-            <div class="w-full flex flex-col gap-3">
-              <h3 class="text-xl font-bold">Business Strategy</h3>
-              <p>
-                We craft data-driven strategies that help you reach your goals
-                and drive sustainable growth.
-              </p>
-            </div>
-            <img
-              src="./assets/media-assets/illustration-graphs-1.svg"
-              alt="3 wavy lines graph illustration"
-              class="size-full object-contain"
-            />
-          </li>
-          <li
-            style="--index: 2"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'solutions_card_shown', leaveClass: 'solutions_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3 solutions_card_hidden"
-          >
-            <div class="w-full flex flex-col gap-3">
-              <h3 class="text-xl font-bold">Operational Efficiency</h3>
-              <p>
-                We streamline processes to increase productivity and reduce
-                costs, ensuring smoother operations.
-              </p>
-            </div>
-
-            <img
-              src="./assets/media-assets/illustration-graphs-2.svg"
-              alt="3 colored bars chart"
-              class="size-full object-contain"
-            />
-          </li>
-          <li
-            style="--index: 3"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'solutions_card_shown', leaveClass: 'solutions_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3 solutions_card_hidden"
-          >
-            <div class="w-full flex flex-col gap-3">
-              <h3 class="text-xl font-bold">Market Expansion</h3>
-              <p>
-                We help you enter new markets with a well-researched approach
-                that sets you up for success.
-              </p>
-            </div>
-
-            <img
-              src="./assets/media-assets/illustration-graphs-3.svg"
-              alt="2 colored bars chart"
-              class="size-full object-contain"
-            />
-          </li>
-        </ul>
-      </section>
-
-      <!-- team -->
-      <section id="team" class="container-padding py-24! flex flex-col gap-10">
-        <div
-          data-scroll-animation="dynamic_toggle"
-          data-animation-variables="{enterClass: 'team_writeup_shown', leaveClass: 'team_writeup_hidden', type: 'scrollTo', threshold: 0.2}"
-          class="w-fit md:max-w-5/7 flex flex-col gap-10 team_writeup_hidden"
-        >
-          <p class="text-2xl md:text-4xl">
-            Our team of seasoned professionals is dedicated to helping you
-            achieve your business goals. With expertise across various fields,
-            we’re here to guide you every step of the way.
-          </p>
-        </div>
-        <div
-          class="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] md:grid-cols-3 lg:grid-cols-4 *:min-h-full *:w-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
-        >
-          <article
-            style="--index: 1"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden"
-          >
-            <img
-              src="./assets/media-assets/team-image-1.png"
-              alt="Image of John Reynnold the Chief business strategist"
-              class="w-full h-52 md:h-72 object-cover"
-            />
-            <div class="w-full flex flex-col px-5 py-3">
-              <h3 class="text-base md:text-xl font-bold">John Reynolds</h3>
-              <p class="text-sm md:text-base">Chief Business Strategist</p>
-            </div>
-          </article>
-          <article
-            style="--index: 3"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden"
-          >
-            <img
-              src="./assets/media-assets/team-image-2.png"
-              alt="Image of Quincy David the Business Strategist"
-              class="w-full h-52 md:h-72 object-cover"
-            />
-            <div class="w-full flex flex-col px-5 py-3">
-              <h3 class="text-base md:text-xl font-bold">Quincy David</h3>
-              <p class="text-sm md:text-base">Business Strategist</p>
-            </div>
-          </article>
-          <article
-            style="--index: 3"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden"
-          >
-            <img
-              src="./assets/media-assets/team-image-3.png"
-              alt="Image of Quincy David the Chief Analyst"
-              class="w-full h-52 md:h-72 object-cover"
-            />
-            <div class="w-full flex flex-col px-5 py-3">
-              <h3 class="text-base md:text-xl font-bold">Lou Xian</h3>
-              <p class="text-sm md:text-base">Chief Analyst</p>
-            </div>
-          </article>
-          <article
-            style="--index: 4"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden"
-          >
-            <img
-              src="./assets/media-assets/team-image-4.png"
-              alt="Image of Martin Wellington the Manager"
-              class="w-full h-52 md:h-72 object-cover"
-            />
-            <div class="w-full flex flex-col px-5 py-3">
-              <h3 class="text-base md:text-xl font-bold">Martin Wellington</h3>
-              <p class="text-sm md:text-base">Manager</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- testimonials -->
-      <section
-        id="testimonials"
-        class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30"
-      >
-        <div class="flex flex-col md:items-center gap-3">
-          <h2
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'testimonials_h2_shown', leaveClass: 'testimonials_h2_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="text-4xl font-bold testimonials_h2_hidden"
-          >
-            What Our Clients Say
-          </h2>
+        <div class="w-full flex flex-col gap-6">
+          <button class="liquid_button hero_cta_button text-sm text-nowrap md:text-sm lg:text-lg"
+            data-hover-animation="character_animation, dynamic_toggle"
+            data-animation-variables="{text:'Book a consultation', variant:'char', enterClass: 'liquid_button-enter', leaveClass: 'liquid_button-leave'}">
+            Book a consultation
+          </button>
           <p
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'testimonials_h2_shown testimonials_p_hidden', leaveClass: 'testimonials_p_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="text-(--color-secondary-foreground) text-xl md:max-w-1/2 md:text-center testimonials_p_hidden"
-          >
-            Real stories from businesses we've helped transform. Discover how
-            our consulting services have made a difference.
+            class="hero_cta_tagline text-sm lg:text-lg text-(--color-secondary-foreground) flex items-center justify-start gap-2">
+            <img src="./assets/media-assets/GiftIcon.svg" alt="gift-icon" class="size-4 lg:size-6" />
+            Helping 200+ companies achieve their business goals.
           </p>
         </div>
-        <ul
-          class="grid min-[498px]:grid-cols-2 md:grid-cols-3 *:min-h-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
-        >
-          <li
-            style="--index: 1"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-background) p-4 rounded-xl"
-          >
-            <blockquote>
-              “Their expertise in operational efficiency saved us time and
-              money. We’re running a much leaner, more effective operation now”
-            </blockquote>
-            <span class="flex items-center gap-3 mt-4">
-              <img
-                src="./assets/media-assets/client-image-1.png"
-                alt="Clare Bamford - client picture"
-                class="size-10 rounded-full object-cover"
-              />
-              <div class="flex flex-col">
-                <h3 class="font-bold">Clare Bamford</h3>
-                <p class="text-sm">@clare.stk</p>
-              </div>
-            </span>
-          </li>
-          <li
-            style="--index: 2"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden"
-          >
-            <blockquote>
-              “Their market expansion strategies were exactly what we needed.
-              We’ve successfully entered two new regions with ease.”
-            </blockquote>
-            <span class="flex items-center gap-3 mt-4">
-              <img
-                src="./assets/media-assets/client-image-2.png"
-                alt="Mark Williams - client picture"
-                class="size-10 rounded-full object-cover"
-              />
-              <div class="flex flex-col">
-                <h3 class="font-bold">Mark Williams</h3>
-                <p class="text-sm">@mark_grows</p>
-              </div>
-            </span>
-          </li>
-          <li
-            style="--index: 3"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden"
-          >
-            <blockquote>
-              “The leadership training we received has transformed our
-              management team. We're more aligned and productive than ever.”
-            </blockquote>
-            <span class="flex items-center gap-3 mt-4">
-              <img
-                src="./assets/media-assets/client-image-3.png"
-                alt="Samantha Green - client picture"
-                class="size-10 rounded-full object-cover"
-              />
-              <div class="flex flex-col">
-                <h3 class="font-bold">Samantha Green</h3>
-                <p class="text-sm">@sam_greenlead</p>
-              </div>
-            </span>
-          </li>
-          <li
-            style="--index: 4"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden"
-          >
-            <blockquote>
-              “Thanks to their business strategy insights, we’ve seen a 25%
-              increase in our revenue within six months.”
-            </blockquote>
-            <span class="flex items-center gap-3 mt-4">
-              <img
-                src="./assets/media-assets/client-image-4.png"
-                alt="James O'Connor - client picture"
-                class="size-10 rounded-full object-cover"
-              />
-              <div class="flex flex-col">
-                <h3 class="font-bold">James O'Connor</h3>
-                <p class="text-sm">@james_ontrack</p>
-              </div>
-            </span>
-          </li>
-          <li
-            style="--index: 5"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden"
-          >
-            <blockquote>
-              “Their operational analysis identified inefficiencies we weren’t
-              even aware of. Our processes are now far more streamlined.”
-            </blockquote>
-            <span class="flex items-center gap-3 mt-4">
-              <img
-                src="./assets/media-assets/client-image-5.png"
-                alt="Laura Knight Image - client picture"
-                class="size-10 rounded-full object-cover"
-              />
-              <div class="flex flex-col">
-                <h3 class="font-bold">Laura Knight</h3>
-                <p class="text-sm">@laura_opsmaster</p>
-              </div>
-            </span>
-          </li>
-          <li
-            style="--index: 6"
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden"
-          >
-            <blockquote>
-              “Their support during our organizational change was invaluable. We
-              navigated a major restructure without disrupting our
-              productivity.”
-            </blockquote>
-            <span class="flex items-center gap-3 mt-4">
-              <img
-                src="./assets/media-assets/client-image-6.png"
-                alt="Biran Chen Image - Client Picture"
-                class="size-10 rounded-full object-cover"
-              />
-              <div class="flex flex-col">
-                <h3 class="font-bold">Brian Chen</h3>
-                <p class="text-sm">@emma_humanconnect</p>
-              </div>
-            </span>
-          </li>
-        </ul>
-      </section>
+      </article>
+      <!-- illustration -->
+      <article>
+        <div class="relative isolate w-full h-full bg-(--color-secondary) rounded-4xl">
+          <!-- ceo image -->
+          <span
+            class="size-full hero_image scale-95 md:scale-100 isolate z-1 block -skew-5 overflow-hidden rounded-4xl">
+            <img src="./assets/media-assets/ceo-image.jpg" alt="Ceo Handerson Lee sitting with pc and smiling"
+              class="size-full object-cover max-h-[70vh] scale-110 skew-5" />
+            <div class="absolute z-0 bottom-0 right-0 h-32 w-60 bg-(--color-background) blur-xl rounded-l-[50%]"></div>
+          </span>
 
-      <!-- Pricing -->
-      <section
-        id="pricing"
-        class="container-padding py-24! gap-10 md:gap-5 bg-(--color-primary) grid md:grid-cols-2"
-      >
-        <!-- Pricing writeup -->
-        <article class="py-4 flex flex-col gap-10 justify-between">
-          <div class="w-full flex flex-col gap-5">
-            <h2
-              data-scroll-animation="dynamic_toggle"
-              data-animation-variables="{enterClass: 'pricing_heading_shown', leaveClass: 'pricing_heading_hidden', type: 'scrollTo', threshold: 0.2}"
-              class="text-4xl text-(--color-primary-foreground) pricing_heading_hidden"
-            >
-              Simple, Transparent <br />
-              Pricing
-            </h2>
-            <p
-              data-scroll-animation="dynamic_toggle"
-              data-animation-variables="{enterClass: 'pricing_sub_heading_shown', leaveClass: 'pricing_sub_heading_hidden', type: 'scrollTo', threshold: 0.2}"
-              class="text-lg text-(--color-background) pricing_sub_heading_hidden"
-            >
-              One comprehensive plan with all the tools and support your
-              business needs to succeed.
+          <!-- stats -->
+          <ul class="absolute hero_profile_stats z-2 flex flex-col gap-2 bottom-10 md:-left-10 lg:-left-20">
+            <li
+              class="min-w-32 lg:min-w-40 px-4 py-1 flex flex-col bg-(--color-secondary) text-(--color-secondary-foreground) rounded-r-lg md:rounded-lg">
+              <h3 class="text-4xl font-bold">80%</h3>
+              <p class="text-sm">Success Rate</p>
+            </li>
+            <li
+              class="min-w-32 lg:min-w-40 px-4 py-1 flex flex-col bg-(--color-secondary) text-(--color-secondary-foreground) rounded-r-lg md:rounded-lg">
+              <h3 class="text-4xl font-bold">500+</h3>
+              <p class="text-sm">Satisfaction Clients</p>
+            </li>
+          </ul>
+          <!-- CEO name -->
+          <span class="hero_ceo_name flex z-3 flex-col absolute bottom-12 right-4">
+            <h3 class="text-xl lg:text-3xl font-bold">Handerson Lee</h3>
+            <p class="text-xs lg:text-sm">CEO of catalyst advisor</p>
+          </span>
+        </div>
+      </article>
+    </section>
+
+    <!-- companies banner -->
+    <section data-scroll-animation="dynamic_toggle"
+      data-animation-variables="{enterClass: 'companies_banner_shown', leaveClass: 'companies_banner_hidden', type: 'scrollTo', threshold: 0.5}"
+      id="companies-banner" class="w-full overflow-hidden py-24">
+      <ul class="max-w-[80%] flex gap-6 items-center justify-center mx-auto">
+        <li class="shrink-0 md:shrink" style="--index: 1">
+          <img src="./assets/media-assets/Logo-demo-componies-1.png" alt="sample company logo 1"
+            class="h-6 lg:h-10 object-contain" />
+        </li>
+        <li class="shrink-0 md:shrink" style="--index: 2">
+          <img src="./assets/media-assets/Logo-demo-componies-2.png" alt="sample company logo 2"
+            class="h-6 lg:h-10 object-contain" />
+        </li>
+        <li class="shrink-0 md:shrink" style="--index: 3">
+          <img src="./assets/media-assets/Logo-demo-componies-3.png" alt="sample company logo 3"
+            class="h-6 lg:h-10 object-contain" />
+        </li>
+        <li class="shrink-0 md:shrink" style="--index: 4">
+          <img src="./assets/media-assets/Logo-demo-componies-4.png" alt="sample company logo 4"
+            class="h-6 lg:h-10 object-contain" />
+        </li>
+        <li class="shrink-0 md:shrink" style="--index: 5">
+          <img src="./assets/media-assets/Logo-demo-componies-5.png" alt="sample company logo 5"
+            class="h-6 lg:h-10 object-contain" />
+        </li>
+        <li class="shrink-0 md:shrink" style="--index: 6">
+          <img src="./assets/media-assets/Logo-demo-componies-6.png" alt="sample company logo 6"
+            class="h-6 lg:h-10 object-contain" />
+        </li>
+        <li class="shrink-0 md:shrink" style="--index: 7">
+          <img src="./assets/media-assets/Logo-demo-componies-7.png" alt="sample company logo 7"
+            class="h-6 lg:h-10 object-contain" />
+        </li>
+      </ul>
+    </section>
+
+    <!-- who we are -->
+    <section id="who_we_are" class="container-padding py-24! bg-(--color-primary)"
+      data-scroll-animation="dynamic_toggle"
+      data-animation-variables="{enterClass: 'who_we_are_shown', leaveClass: 'who_we_are_hidden', type: 'scrollTo', threshold: 0.5}">
+      <h2 class="text-(--color-background)">Who we are?</h2>
+      <p class="text-(--color-primary-foreground) text-xl md:max-w-1/2">
+        we are driven by a passion for helping businesses thrive. With decades
+        of experience and a commitment to excellence, our team is ready to
+        guide you through every challenge.
+      </p>
+    </section>
+
+    <!-- solutions -->
+    <section id="solutions" class="container-padding py-24! flex flex-col gap-10">
+      <div class="w-fit md:max-w-3/7 flex flex-col gap-10">
+        <h1 data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'solutions_heading1_shown', leaveClass: 'solutions_heading1_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="text-4xl solutions_heading1_hidden">
+          Tailored Solutions for Every Challenge
+        </h1>
+        <p data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'solutions_p_shown', leaveClass: 'solutions_p_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="text-xl text-(--color-secondary-foreground) solutions_p_hidden">
+          We provide custom solutions that address your specific business
+          needs. From strategy to execution, we focus on delivering measurable
+          results.
+        </p>
+      </div>
+      <ul
+        class="grid min-[498px]:grid-cols-2 md:grid-cols-3 *:min-h-full items-center justify-center gap-4 text-(--color-secondary-foreground)">
+        <li style="--index: 1" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'solutions_card_shown', leaveClass: 'solutions_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3 items-center justify-between solutions_card_hidden">
+          <div class="w-full flex flex-col gap-3">
+            <h3 class="text-xl font-bold">Business Strategy</h3>
+            <p>
+              We craft data-driven strategies that help you reach your goals
+              and drive sustainable growth.
             </p>
+          </div>
+          <img src="./assets/media-assets/illustration-graphs-1.svg" alt="3 wavy lines graph illustration"
+            class="size-full object-contain" />
+        </li>
+        <li style="--index: 2" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'solutions_card_shown', leaveClass: 'solutions_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3 solutions_card_hidden">
+          <div class="w-full flex flex-col gap-3">
+            <h3 class="text-xl font-bold">Operational Efficiency</h3>
+            <p>
+              We streamline processes to increase productivity and reduce
+              costs, ensuring smoother operations.
+            </p>
+          </div>
 
-            <button
-              data-scroll-animation="dynamic_toggle"
-              data-animation-variables="{enterClass: 'pricing_cta_button_shown', leaveClass: 'pricing_cta_button_hidden', type: 'scrollTo', threshold: 0.2}"
-              class="liquid_button pricing_cta_button_hidden variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
-            >
-              Book a consultation
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="Arrow right">
+          <img src="./assets/media-assets/illustration-graphs-2.svg" alt="3 colored bars chart"
+            class="size-full object-contain" />
+        </li>
+        <li style="--index: 3" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'solutions_card_shown', leaveClass: 'solutions_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-secondary) rounded-xl p-5 flex flex-col gap-3 solutions_card_hidden">
+          <div class="w-full flex flex-col gap-3">
+            <h3 class="text-xl font-bold">Market Expansion</h3>
+            <p>
+              We help you enter new markets with a well-researched approach
+              that sets you up for success.
+            </p>
+          </div>
+
+          <img src="./assets/media-assets/illustration-graphs-3.svg" alt="2 colored bars chart"
+            class="size-full object-contain" />
+        </li>
+      </ul>
+    </section>
+
+    <!-- team -->
+    <section id="team" class="container-padding py-24! flex flex-col gap-10">
+      <div data-scroll-animation="dynamic_toggle"
+        data-animation-variables="{enterClass: 'team_writeup_shown', leaveClass: 'team_writeup_hidden', type: 'scrollTo', threshold: 0.2}"
+        class="w-fit md:max-w-5/7 flex flex-col gap-10 team_writeup_hidden">
+        <p class="text-2xl md:text-4xl">
+          Our team of seasoned professionals is dedicated to helping you
+          achieve your business goals. With expertise across various fields,
+          we’re here to guide you every step of the way.
+        </p>
+      </div>
+      <div
+        class="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] md:grid-cols-3 lg:grid-cols-4 *:min-h-full *:w-full items-center justify-center gap-4 text-(--color-secondary-foreground)">
+        <article style="--index: 1" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden">
+          <img src="./assets/media-assets/team-image-1.png" alt="John Reynnold the Chief business strategist"
+            class="w-full h-52 md:h-72 object-cover" />
+          <div class="w-full flex flex-col px-5 py-3">
+            <h3 class="text-base md:text-xl font-bold">John Reynolds</h3>
+            <p class="text-sm md:text-base">Chief Business Strategist</p>
+          </div>
+        </article>
+        <article style="--index: 3" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden">
+          <img src="./assets/media-assets/team-image-2.png" alt="Quincy David the Business Strategist"
+            class="w-full h-52 md:h-72 object-cover" />
+          <div class="w-full flex flex-col px-5 py-3">
+            <h3 class="text-base md:text-xl font-bold">Quincy David</h3>
+            <p class="text-sm md:text-base">Business Strategist</p>
+          </div>
+        </article>
+        <article style="--index: 3" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden">
+          <img src="./assets/media-assets/team-image-3.png" alt="Quincy David the Chief Analyst"
+            class="w-full h-52 md:h-72 object-cover" />
+          <div class="w-full flex flex-col px-5 py-3">
+            <h3 class="text-base md:text-xl font-bold">Lou Xian</h3>
+            <p class="text-sm md:text-base">Chief Analyst</p>
+          </div>
+        </article>
+        <article style="--index: 4" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between team_card_hidden">
+          <img src="./assets/media-assets/team-image-4.png" alt="Martin Wellington the Manager"
+            class="w-full h-52 md:h-72 object-cover" />
+          <div class="w-full flex flex-col px-5 py-3">
+            <h3 class="text-base md:text-xl font-bold">Martin Wellington</h3>
+            <p class="text-sm md:text-base">Manager</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- testimonials -->
+    <section id="testimonials" class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30">
+      <div class="flex flex-col md:items-center gap-3">
+        <h2 data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'testimonials_h2_shown', leaveClass: 'testimonials_h2_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="text-4xl font-bold testimonials_h2_hidden">
+          What Our Clients Say
+        </h2>
+        <p data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'testimonials_h2_shown testimonials_p_hidden', leaveClass: 'testimonials_p_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="text-(--color-secondary-foreground) text-xl md:max-w-1/2 md:text-center testimonials_p_hidden">
+          Real stories from businesses we've helped transform. Discover how
+          our consulting services have made a difference.
+        </p>
+      </div>
+      <ul
+        class="grid min-[498px]:grid-cols-2 md:grid-cols-3 *:min-h-full items-center justify-center gap-4 text-(--color-secondary-foreground)">
+        <li style="--index: 1" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'team_card_shown', leaveClass: 'team_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-background) p-4 rounded-xl">
+          <blockquote>
+            “Their expertise in operational efficiency saved us time and
+            money. We’re running a much leaner, more effective operation now”
+          </blockquote>
+          <span class="flex items-center gap-3 mt-4">
+            <img src="./assets/media-assets/client-image-1.png" alt="Clare Bamford - client"
+              class="size-10 rounded-full object-cover" />
+            <div class="flex flex-col">
+              <h3 class="font-bold">Clare Bamford</h3>
+              <p class="text-sm">@clare.stk</p>
+            </div>
+          </span>
+        </li>
+        <li style="--index: 2" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden">
+          <blockquote>
+            “Their market expansion strategies were exactly what we needed.
+            We’ve successfully entered two new regions with ease.”
+          </blockquote>
+          <span class="flex items-center gap-3 mt-4">
+            <img src="./assets/media-assets/client-image-2.png" alt="Mark Williams - client"
+              class="size-10 rounded-full object-cover" />
+            <div class="flex flex-col">
+              <h3 class="font-bold">Mark Williams</h3>
+              <p class="text-sm">@mark_grows</p>
+            </div>
+          </span>
+        </li>
+        <li style="--index: 3" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden">
+          <blockquote>
+            “The leadership training we received has transformed our
+            management team. We're more aligned and productive than ever.”
+          </blockquote>
+          <span class="flex items-center gap-3 mt-4">
+            <img src="./assets/media-assets/client-image-3.png" alt="Samantha Green - client"
+              class="size-10 rounded-full object-cover" />
+            <div class="flex flex-col">
+              <h3 class="font-bold">Samantha Green</h3>
+              <p class="text-sm">@sam_greenlead</p>
+            </div>
+          </span>
+        </li>
+        <li style="--index: 4" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden">
+          <blockquote>
+            “Thanks to their business strategy insights, we’ve seen a 25%
+            increase in our revenue within six months.”
+          </blockquote>
+          <span class="flex items-center gap-3 mt-4">
+            <img src="./assets/media-assets/client-image-4.png" alt="James O'Connor - client"
+              class="size-10 rounded-full object-cover" />
+            <div class="flex flex-col">
+              <h3 class="font-bold">James O'Connor</h3>
+              <p class="text-sm">@james_ontrack</p>
+            </div>
+          </span>
+        </li>
+        <li style="--index: 5" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden">
+          <blockquote>
+            “Their operational analysis identified inefficiencies we weren’t
+            even aware of. Our processes are now far more streamlined.”
+          </blockquote>
+          <span class="flex items-center gap-3 mt-4">
+            <img src="./assets/media-assets/client-image-5.png" alt="Laura Knight - client"
+              class="size-10 rounded-full object-cover" />
+            <div class="flex flex-col">
+              <h3 class="font-bold">Laura Knight</h3>
+              <p class="text-sm">@laura_opsmaster</p>
+            </div>
+          </span>
+        </li>
+        <li style="--index: 6" data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'testimonial_card_shown', leaveClass: 'testimonial_card_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-background) p-4 rounded-xl testimonial_card_hidden">
+          <blockquote>
+            “Their support during our organizational change was invaluable. We
+            navigated a major restructure without disrupting our
+            productivity.”
+          </blockquote>
+          <span class="flex items-center gap-3 mt-4">
+            <img src="./assets/media-assets/client-image-6.png" alt="Biran Chen - client"
+              class="size-10 rounded-full object-cover" />
+            <div class="flex flex-col">
+              <h3 class="font-bold">Brian Chen</h3>
+              <p class="text-sm">@emma_humanconnect</p>
+            </div>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="container-padding py-24! gap-10 md:gap-5 bg-(--color-primary) grid md:grid-cols-2">
+      <!-- Pricing writeup -->
+      <article class="py-4 flex flex-col gap-10 justify-between">
+        <div class="w-full flex flex-col gap-5">
+          <h2 data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'pricing_heading_shown', leaveClass: 'pricing_heading_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="text-4xl text-(--color-primary-foreground) pricing_heading_hidden">
+            Simple, Transparent <br />
+            Pricing
+          </h2>
+          <p data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'pricing_sub_heading_shown', leaveClass: 'pricing_sub_heading_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="text-lg text-(--color-background) pricing_sub_heading_hidden">
+            One comprehensive plan with all the tools and support your
+            business needs to succeed.
+          </p>
+
+          <button data-scroll-animation="dynamic_toggle"
+            data-animation-variables="{enterClass: 'pricing_cta_button_shown', leaveClass: 'pricing_cta_button_hidden', type: 'scrollTo', threshold: 0.2}"
+            class="liquid_button pricing_cta_button_hidden variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center">
+            Book a consultation
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g>
+                <path d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                  stroke="#102D15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </button>
+        </div>
+
+        <p data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'pricing_paragraph_shown', leaveClass: 'pricing_paragraph_hidden', type: 'scrollTo', threshold: 0.2}"
+          class="text-base text-(--color-background) pricing_paragraph_hidden">
+          Get full access to our expert consulting services, tailored
+          specifically to your business challenges.
+        </p>
+      </article>
+      <!-- Pricing list -->
+      <article data-scroll-animation="dynamic_toggle"
+        data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-300 opacity-100', leaveClass: '-translate-x-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+        class="bg-(--color-secondary) rounded-xl p-5 md:p-10 flex flex-col gap-5 -translate-x-5 opacity-0">
+        <div class="w-full flex flex-col gap-2">
+          <h2 class="text-xl text-(--color-secondary-foreground)">
+            Starting at
+          </h2>
+          <strong class="text-4xl">$999
+            <sub class="text-sm text-(--color-secondary-foreground) font-normal">/Monthly</sub></strong>
+          <hr class="text-(--color-secondary-foreground) mt-3" />
+        </div>
+        <div class="w-full flex flex-col gap-3">
+          <h2 class="text-xl">What You Get</h2>
+          <ul class="w-full flex flex-col gap-3">
+            <li class="flex items-center gap-2">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g clip-path="url(#clip0_1_479)">
                   <path
-                    id="Icon"
-                    d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
-                    stroke="#102D15"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath>
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              Custom business strategy development
+            </li>
+            <li class="flex items-center gap-2">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g clip-path="url(#clip0_1_479)">
+                  <path
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath>
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              In-depth operational efficiency analysis
+            </li>
+            <li class="flex items-center gap-2">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g clip-path="url(#clip0_1_479)">
+                  <path
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath>
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              Leadership training and development sessions
+            </li>
+            <li class="flex items-center gap-2">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g clip-path="url(#clip0_1_479)">
+                  <path
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath>
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              Market expansion consulting
+            </li>
+            <li class="flex items-center gap-2">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g clip-path="url(#clip0_1_479)">
+                  <path
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath>
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              Ongoing support and regular performance reviews
+            </li>
+            <li class="flex items-center gap-2">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g clip-path="url(#clip0_1_479)">
+                  <path
+                    d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
+                    stroke="#507102" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath>
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              Dedicated account manager
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- Articles -->
+    <section id="articles" class="container-padding py-24! flex flex-col gap-10">
+      <div class="w-fit md:max-w-3/7 flex flex-col gap-10">
+        <h1 data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="text-4xl translate-y-5 opacity-0">
+          Latest articles
+        </h1>
+        <p data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-400 opacity-100', leaveClass: 'translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="text-xl text-(--color-secondary-foreground) translate-y-5 opacity-0">
+          Stay up to date with the latest trends, tips, and expert advice from
+          our team of consultants.
+        </p>
+      </div>
+      <div
+        class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] lg:grid-cols-3 *:min-h-full *:w-full items-center justify-center gap-4 text-(--color-secondary-foreground)">
+        <article data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-200 opacity-100', leaveClass: '10translate-x-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden justify-between -translate-x-20 opacity-0">
+          <img src="./assets/media-assets/articles-image-1.png" alt="Leadership in Organizational Success"
+            class="w-full h-52 md:h-72 object-cover" />
+          <div class="w-full grow flex flex-col justify-between gap-2 px-5 py-3">
+            <h3 class="text-base md:text-xl font-bold">
+              The Importance of Leadership in Organizational Success
+            </h3>
+            <p class="text-sm md:text-base">
+              Explore how strong leadership can drive your company toward
+              greater success.
+            </p>
+            <button
+              class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
+              aria-label="Learn more about The Importance of Leadership in Organizational Success">
+              Learn More
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g>
+                  <path d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                    stroke="var(--color-secondary-foreground)" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
                 </g>
               </svg>
             </button>
           </div>
-
-          <p
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'pricing_paragraph_shown', leaveClass: 'pricing_paragraph_hidden', type: 'scrollTo', threshold: 0.2}"
-            class="text-base text-(--color-background) pricing_paragraph_hidden"
-          >
-            Get full access to our expert consulting services, tailored
-            specifically to your business challenges.
-          </p>
         </article>
-        <!-- Pricing list -->
-        <article
-          data-scroll-animation="dynamic_toggle"
-          data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-300 opacity-100', leaveClass: '-translate-x-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
-          class="bg-(--color-secondary) rounded-xl p-5 md:p-10 flex flex-col gap-5 -translate-x-5 opacity-0"
-        >
-          <div class="w-full flex flex-col gap-2">
-            <h2 class="text-xl text-(--color-secondary-foreground)">
-              Starting at
-            </h2>
-            <strong class="text-4xl"
-              >$999
-              <sub
-                class="text-sm text-(--color-secondary-foreground) font-normal"
-                >/Monthly</sub
-              ></strong
-            >
-            <hr class="text-(--color-secondary-foreground) mt-3" />
-          </div>
-          <div class="w-full flex flex-col gap-3">
-            <h2 class="text-xl">What You Get</h2>
-            <ul class="w-full flex flex-col gap-3">
-              <li class="flex items-center gap-2">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="Check circle" clip-path="url(#clip0_1_479)">
-                    <path
-                      id="Icon"
-                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                      stroke="#507102"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_1_479">
-                      <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                Custom business strategy development
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="Check circle" clip-path="url(#clip0_1_479)">
-                    <path
-                      id="Icon"
-                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                      stroke="#507102"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_1_479">
-                      <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                In-depth operational efficiency analysis
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="Check circle" clip-path="url(#clip0_1_479)">
-                    <path
-                      id="Icon"
-                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                      stroke="#507102"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_1_479">
-                      <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                Leadership training and development sessions
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="Check circle" clip-path="url(#clip0_1_479)">
-                    <path
-                      id="Icon"
-                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                      stroke="#507102"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_1_479">
-                      <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                Market expansion consulting
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="Check circle" clip-path="url(#clip0_1_479)">
-                    <path
-                      id="Icon"
-                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                      stroke="#507102"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_1_479">
-                      <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                Ongoing support and regular performance reviews
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="Check circle" clip-path="url(#clip0_1_479)">
-                    <path
-                      id="Icon"
-                      d="M18.3333 9.23333V10C18.3323 11.797 17.7504 13.5456 16.6744 14.9849C15.5985 16.4241 14.0861 17.4771 12.3628 17.9866C10.6395 18.4961 8.79771 18.4349 7.11206 17.8122C5.4264 17.1894 3.98721 16.0384 3.00913 14.5309C2.03105 13.0234 1.56649 11.2401 1.68473 9.44693C1.80297 7.6538 2.49767 5.94694 3.66523 4.58089C4.83279 3.21485 6.41065 2.26282 8.16349 1.86679C9.91633 1.47076 11.7502 1.65195 13.3917 2.38333M18.3333 3.33333L10 11.675L7.5 9.175"
-                      stroke="#507102"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_1_479">
-                      <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                Dedicated account manager
-              </li>
-            </ul>
+        <article data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-200 opacity-100', leaveClass: '-translate-x-10 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between -translate-x-30 opacity-0">
+          <img src="./assets/media-assets/articles-image-2.png" alt="Location & Market Expansion"
+            class="w-full h-52 md:h-72 object-cover" />
+          <div class="w-full grow flex flex-col justify-between gap-2 px-5 py-3">
+            <h3 class="text-base md:text-xl font-bold">
+              Location & Market Expansion
+            </h3>
+            <p class="text-sm md:text-base">
+              Find out various strategies that can help your business expand
+              in different markets.
+            </p>
+            <button
+              class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
+              aria-label="Learn more about Location & Market Expansion">
+              Learn More
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g>
+                  <path d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                    stroke="var(--color-secondary-foreground)" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </g>
+              </svg>
+            </button>
           </div>
         </article>
-      </section>
+        <article data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-200 opacity-100', leaveClass: '-translate-x-10 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between -translate-x-40 opacity-0">
+          <img src="./assets/media-assets/articles-image-3.png" alt="illustration-graphs-1"
+            class="w-full h-52 md:h-72 object-cover" />
+          <div class="w-full grow flex flex-col justify-between gap-2 px-5 py-3">
+            <h3 class="text-base md:text-xl font-bold">
+              The Fragility of Organizational Change
+            </h3>
+            <p class="text-sm md:text-base">
+              A detailed step by step guide on how to have a successful
+              organizational change without disrupting your work productivity.
+            </p>
+            <button
+              class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
+              aria-label="Learn more about The Fragility of Organizational Change">
+              Learn More
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g>
+                  <path d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                    stroke="var(--color-secondary-foreground)" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </g>
+              </svg>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <!-- Articles -->
-      <section
-        id="articles"
-        class="container-padding py-24! flex flex-col gap-10"
-      >
-        <div class="w-fit md:max-w-3/7 flex flex-col gap-10">
-          <h1
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="text-4xl translate-y-5 opacity-0"
-          >
-            Latest articles
-          </h1>
-          <p
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-400 opacity-100', leaveClass: 'translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="text-xl text-(--color-secondary-foreground) translate-y-5 opacity-0"
-          >
-            Stay up to date with the latest trends, tips, and expert advice from
-            our team of consultants.
-          </p>
-        </div>
-        <div
-          class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] lg:grid-cols-3 *:min-h-full *:w-full items-center justify-center gap-4 text-(--color-secondary-foreground)"
-        >
-          <article
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-200 opacity-100', leaveClass: '10translate-x-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden justify-between -translate-x-20 opacity-0"
-          >
-            <img
-              src="./assets/media-assets/articles-image-1.png"
-              alt="Leadership in Organizational Success image"
-              class="w-full h-52 md:h-72 object-cover"
-            />
-            <div
-              class="w-full grow flex flex-col justify-between gap-2 px-5 py-3"
-            >
-              <h3 class="text-base md:text-xl font-bold">
-                The Importance of Leadership in Organizational Success
-              </h3>
-              <p class="text-sm md:text-base">
-                Explore how strong leadership can drive your company toward
-                greater success.
-              </p>
-              <button
-                class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
-              >
-                Learn More
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="Arrow right">
-                    <path
-                      id="Icon"
-                      d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
-                      stroke="var(--color-secondary-foreground)"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                </svg>
-              </button>
-            </div>
-          </article>
-          <article
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-200 opacity-100', leaveClass: '-translate-x-10 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between -translate-x-30 opacity-0"
-          >
-            <img
-              src="./assets/media-assets/articles-image-2.png"
-              alt="Location & Market Expansion image"
-              class="w-full h-52 md:h-72 object-cover"
-            />
-            <div
-              class="w-full grow flex flex-col justify-between gap-2 px-5 py-3"
-            >
-              <h3 class="text-base md:text-xl font-bold">
-                Location & Market Expansion
-              </h3>
-              <p class="text-sm md:text-base">
-                Find out various strategies that can help your business expand
-                in different markets.
-              </p>
-              <button
-                class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
-              >
-                Learn More
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="Arrow right">
-                    <path
-                      id="Icon"
-                      d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
-                      stroke="var(--color-secondary-foreground)"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                </svg>
-              </button>
-            </div>
-          </article>
-          <article
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'translate-x-0 duration-500 delay-200 opacity-100', leaveClass: '-translate-x-10 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="bg-(--color-secondary) rounded-xl flex flex-col overflow-hidden items-center justify-between -translate-x-40 opacity-0"
-          >
-            <img
-              src="./assets/media-assets/articles-image-3.png"
-              alt="illustration-graphs-1"
-              class="w-full h-52 md:h-72 object-cover"
-            />
-            <div
-              class="w-full grow flex flex-col justify-between gap-2 px-5 py-3"
-            >
-              <h3 class="text-base md:text-xl font-bold">
-                The Fragility of Organizational Change
-              </h3>
-              <p class="text-sm md:text-base">
-                A detailed step by step guide on how to have a successful
-                organizational change without disrupting your work productivity.
-              </p>
-              <button
-                class="mt-4 text-sm text-nowrap md:text-sm lg:text-lg w-fit h-fit flex gap-2 items-center justify-center"
-              >
-                Learn More
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="Arrow right">
-                    <path
-                      id="Icon"
-                      d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
-                      stroke="var(--color-secondary-foreground)"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                </svg>
-              </button>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- Bottom CTA -->
-      <section
-        id="cta"
-        class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30"
-      >
-        <div
-          class="w-fit md:max-w-3/7 flex flex-col gap-4 bg-(--color-primary) p-6 rounded-xl"
-        >
-          <h1
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'scale-100 duration-500 delay-200 opacity-100', leaveClass: 'scale-50 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="text-4xl text-(--color-primary-foreground) scale-50 opacity-0"
-          >
-            Let’s Take Your Business to the Next Level
-          </h1>
-          <p
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'scale-100 duration-500 delay-200 opacity-100', leaveClass: 'scale-50 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="text-lg font-normal text-(--color-primary-foreground) scale-50 opacity-0"
-          >
-            Partner with us for strategic insights and tailored solutions that
-            drive real results. Contact us now to get started.
-          </p>
-          <button
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'scale-100 duration-500 delay-200 opacity-100', leaveClass: 'scale-50 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="liquid_button mt-2 variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
-          >
-            Book a call now
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="Arrow right">
-                <path
-                  id="Icon"
-                  d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
-                  stroke="#102D15"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-            </svg>
-          </button>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section id="faq" class="container-padding py-24! flex flex-col gap-10">
-        <h1
-          data-scroll-animation="dynamic_toggle"
-          data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
-          class="text-2xl md:text-4xl text-(--color-primary) translate-y-5 opacity-0"
-        >
-          Frequently Asked Questions
+    <!-- Bottom CTA -->
+    <section id="cta" class="container-padding py-24! flex flex-col gap-10 bg-(--color-secondary)/30">
+      <div class="w-fit md:max-w-3/7 flex flex-col gap-4 bg-(--color-primary) p-6 rounded-xl">
+        <h1 data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'scale-100 duration-500 delay-200 opacity-100', leaveClass: 'scale-50 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="text-4xl text-(--color-primary-foreground) scale-50 opacity-0">
+          Let’s Take Your Business to the Next Level
         </h1>
+        <p data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'scale-100 duration-500 delay-200 opacity-100', leaveClass: 'scale-50 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="text-lg font-normal text-(--color-primary-foreground) scale-50 opacity-0">
+          Partner with us for strategic insights and tailored solutions that
+          drive real results. Contact us now to get started.
+        </p>
+        <button data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'scale-100 duration-500 delay-200 opacity-100', leaveClass: 'scale-50 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="liquid_button mt-2 variant-spark text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center">
+          Book a call now
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g>
+              <path d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                stroke="#102D15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+          </svg>
+        </button>
+      </div>
+    </section>
 
-        <ul
-          class="w-full flex flex-col gap-px *:bg-(--color-secondary-foreground) rounded-xl *:p-5 *:first:rounded-t-xl *:last:rounded-b-xl"
-        >
-          <li
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-200 opacity-100', leaveClass: '-translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="h-fit flex-col text-(--color-background)"
-          >
-            <details>
-              <summary>
-                What type of businesses do you work with?
-                <span class="try-toggle"></span>
-              </summary>
-              <div data-details-slot="content">
-                <p>
-                  We work with businesses of all sizes, from startups to
-                  established enterprises, across a variety of industries. Our
-                  solutions are tailored to meet your specific needs.
-                </p>
-              </div>
-            </details>
-          </li>
-          <li
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-400 opacity-100', leaveClass: '-translate-y-7 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="h-fit flex-col text-(--color-background)"
-          >
-            <details>
-              <summary>
-                How do your consulting services work?
-                <span class="try-toggle"></span>
-              </summary>
-              <div data-details-slot="content">
-                <p>
-                  We work with businesses of all sizes, from startups to
-                  established enterprises, across a variety of industries. Our
-                  solutions are tailored to meet your specific needs.
-                </p>
-              </div>
-            </details>
-          </li>
-          <li
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-600 opacity-100', leaveClass: '-translate-y-9 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="h-fit flex-col text-(--color-background)"
-          >
-            <details>
-              <summary>
-                What is the cost of your consulting services?
-                <span class="try-toggle"></span>
-              </summary>
-              <div data-details-slot="content">
-                <p>
-                  We work with businesses of all sizes, from startups to
-                  established enterprises, across a variety of industries. Our
-                  solutions are tailored to meet your specific needs.
-                </p>
-              </div>
-            </details>
-          </li>
-          <li
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-800 opacity-100', leaveClass: '-translate-y-11 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="h-fit flex-col text-(--color-background)"
-          >
-            <details>
-              <summary>
-                How soon can I expect results? <span class="try-toggle"></span>
-              </summary>
-              <div data-details-slot="content">
-                <p>
-                  We work with businesses of all sizes, from startups to
-                  established enterprises, across a variety of industries. Our
-                  solutions are tailored to meet your specific needs.
-                </p>
-              </div>
-            </details>
-          </li>
-          <li
-            data-scroll-animation="dynamic_toggle"
-            data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-1000 opacity-100', leaveClass: '-translate-y-13 opacity-0', type: 'scrollTo', threshold: 0.2}"
-            class="h-fit flex-col text-(--color-background)"
-          >
-            <details>
-              <summary>
-                How do I get started? <span class="try-toggle"></span>
-              </summary>
-              <div data-details-slot="content">
-                <p>
-                  We work with businesses of all sizes, from startups to
-                  established enterprises, across a variety of industries. Our
-                  solutions are tailored to meet your specific needs.
-                </p>
-              </div>
-            </details>
-          </li>
-        </ul>
-      </section>
-    </main>
+    <!-- FAQ -->
+    <section id="faq" class="container-padding py-24! flex flex-col gap-10">
+      <h1 data-scroll-animation="dynamic_toggle"
+        data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+        class="text-2xl md:text-4xl text-(--color-primary) translate-y-5 opacity-0">
+        Frequently Asked Questions
+      </h1>
 
-    <footer
-      class="container-padding py-24! flex flex-col gap-10 bg-(--color-primary)"
-    >
-      <section
-        data-scroll-animation="dynamic_toggle"
-        data-animation-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
-        class="w-full flex flex-col gap-10 bg-(--color-secondary-foreground) text-(--color-background) p-5 md:p-10 rounded-xl rotate-y-90 opacity-0"
-      >
-        <div
-          class="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10"
-        >
-          <nav class="w-fit flex flex-col gap-5">
-            <h2 class="text-xl font-bold">Menu</h2>
-            <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
-              <li>
-                <a
-                  href="#"
-                  class="before:bg-(--color-background)!"
-                  data-hover-animation="underline_animation"
-                  >Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="before:bg-(--color-background)!"
-                  data-hover-animation="underline_animation"
-                  >Pricing</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="before:bg-(--color-background)!"
-                  data-hover-animation="underline_animation"
-                  >Resources</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="before:bg-(--color-background)!"
-                  data-hover-animation="underline_animation"
-                  >Testimonials</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="before:bg-(--color-background)!"
-                  data-hover-animation="underline_animation"
-                  >FAQ</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <nav class="w-fit flex flex-col gap-5">
-            <h2 class="text-xl font-bold">Support</h2>
-            <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
-              <li>
-                <a
-                  href="#"
-                  class="before:bg-(--color-background)!"
-                  data-hover-animation="underline_animation"
-                  >info@gmail.com</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="before:bg-(--color-background)!"
-                  data-hover-animation="underline_animation"
-                  >Contact Customer Success</a
-                >
-              </li>
-            </ul>
-          </nav>
+      <ul
+        class="w-full flex flex-col gap-px *:bg-(--color-secondary-foreground) rounded-xl *:p-5 *:first:rounded-t-xl *:last:rounded-b-xl">
+        <li data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-200 opacity-100', leaveClass: '-translate-y-5 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="h-fit flex-col text-(--color-background)">
+          <details>
+            <summary>
+              What type of businesses do you work with?
+              <span class="try-toggle"></span>
+            </summary>
+            <div data-details-slot="content">
+              <p>
+                We work with businesses of all sizes, from startups to
+                established enterprises, across a variety of industries. Our
+                solutions are tailored to meet your specific needs.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-400 opacity-100', leaveClass: '-translate-y-7 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="h-fit flex-col text-(--color-background)">
+          <details>
+            <summary>
+              How do your consulting services work?
+              <span class="try-toggle"></span>
+            </summary>
+            <div data-details-slot="content">
+              <p>
+                We work with businesses of all sizes, from startups to
+                established enterprises, across a variety of industries. Our
+                solutions are tailored to meet your specific needs.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-600 opacity-100', leaveClass: '-translate-y-9 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="h-fit flex-col text-(--color-background)">
+          <details>
+            <summary>
+              What is the cost of your consulting services?
+              <span class="try-toggle"></span>
+            </summary>
+            <div data-details-slot="content">
+              <p>
+                We work with businesses of all sizes, from startups to
+                established enterprises, across a variety of industries. Our
+                solutions are tailored to meet your specific needs.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-800 opacity-100', leaveClass: '-translate-y-11 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="h-fit flex-col text-(--color-background)">
+          <details>
+            <summary>
+              How soon can I expect results? <span class="try-toggle"></span>
+            </summary>
+            <div data-details-slot="content">
+              <p>
+                We work with businesses of all sizes, from startups to
+                established enterprises, across a variety of industries. Our
+                solutions are tailored to meet your specific needs.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li data-scroll-animation="dynamic_toggle"
+          data-animation-variables="{enterClass: 'translate-y-0 duration-500 delay-1000 opacity-100', leaveClass: '-translate-y-13 opacity-0', type: 'scrollTo', threshold: 0.2}"
+          class="h-fit flex-col text-(--color-background)">
+          <details>
+            <summary>
+              How do I get started? <span class="try-toggle"></span>
+            </summary>
+            <div data-details-slot="content">
+              <p>
+                We work with businesses of all sizes, from startups to
+                established enterprises, across a variety of industries. Our
+                solutions are tailored to meet your specific needs.
+              </p>
+            </div>
+          </details>
+        </li>
+      </ul>
+    </section>
+  </main>
 
-          <nav class="w-fit flex flex-col gap-5">
-            <h2 class="text-xl font-bold">Trust & Legal</h2>
-            <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
-              <li>
-                <a
-                  href="#"
-                  class="before:bg-(--color-background)!"
-                  data-hover-animation="underline_animation"
-                  >Terms & Conditions</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="before:bg-(--color-background)!"
-                  data-hover-animation="underline_animation"
-                  >Privacy Policy</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <nav class="w-fit flex flex-col gap-5">
-            <h2 class="text-xl font-bold">Socials</h2>
-            <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
-              <li>
-                <a href="#" class="w-fit flex items-center gap-2">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g id="Instagram">
+  <footer class="container-padding py-24! flex flex-col gap-10 bg-(--color-primary)">
+    <section data-scroll-animation="dynamic_toggle"
+      data-animation-variables="{enterClass: 'rotate-y-0 duration-500 delay-200 opacity-100', leaveClass: 'rotate-y-90 opacity-0', type: 'scrollTo', threshold: 0.2}"
+      class="w-full flex flex-col gap-10 bg-(--color-secondary-foreground) text-(--color-background) p-5 md:p-10 rounded-xl rotate-y-90 opacity-0">
+      <div class="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10">
+        <nav class="w-fit flex flex-col gap-5" aria-labelledby="footer-menu-heading">
+          <h2 class="text-xl font-bold" id="footer-menu-heading">Menu</h2>
+          <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
+            <li>
+              <a href="#" class="before:bg-(--color-background)!"
+                data-hover-animation="underline_animation">Services</a>
+            </li>
+            <li>
+              <a href="#" class="before:bg-(--color-background)!" data-hover-animation="underline_animation">Pricing</a>
+            </li>
+            <li>
+              <a href="#" class="before:bg-(--color-background)!"
+                data-hover-animation="underline_animation">Resources</a>
+            </li>
+            <li>
+              <a href="#" class="before:bg-(--color-background)!"
+                data-hover-animation="underline_animation">Testimonials</a>
+            </li>
+            <li>
+              <a href="#" class="before:bg-(--color-background)!" data-hover-animation="underline_animation">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="w-fit flex flex-col gap-5" aria-labelledby="footer-support-heading">
+          <h2 class="text-xl font-bold" id="footer-support-heading">Support</h2>
+          <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
+            <li>
+              <a href="#" class="before:bg-(--color-background)!"
+                data-hover-animation="underline_animation">info@gmail.com</a>
+            </li>
+            <li>
+              <a href="#" class="before:bg-(--color-background)!" data-hover-animation="underline_animation">Contact
+                Customer Success</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="w-fit flex flex-col gap-5" aria-labelledby="footer-trust-heading">
+          <h2 class="text-xl font-bold" id="footer-trust-heading">Trust & Legal</h2>
+          <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
+            <li>
+              <a href="#" class="before:bg-(--color-background)!" data-hover-animation="underline_animation">Terms &
+                Conditions</a>
+            </li>
+            <li>
+              <a href="#" class="before:bg-(--color-background)!" data-hover-animation="underline_animation">Privacy
+                Policy</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="w-fit flex flex-col gap-5" aria-labelledby="footer-socials-heading">
+          <h2 class="text-xl font-bold" id="footer-socials-heading">Socials</h2>
+          <ul class="header-nav flex flex-col text-sm gap-4 font-normal">
+            <li>
+              <a href="#" class="w-fit flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Instagram">
+                    <path
+                      d="M11.6667 4.33325H11.6733M4.66668 1.33325H11.3333C13.1743 1.33325 14.6667 2.82564 14.6667 4.66659V11.3333C14.6667 13.1742 13.1743 14.6666 11.3333 14.6666H4.66668C2.82573 14.6666 1.33334 13.1742 1.33334 11.3333V4.66659C1.33334 2.82564 2.82573 1.33325 4.66668 1.33325ZM10.6667 7.57992C10.749 8.13475 10.6542 8.7014 10.3958 9.19926C10.1375 9.69713 9.72877 10.1009 9.22776 10.353C8.72675 10.6052 8.15897 10.693 7.6052 10.6039C7.05143 10.5148 6.53985 10.2533 6.14324 9.85669C5.74662 9.46008 5.48516 8.9485 5.39605 8.39473C5.30695 7.84095 5.39472 7.27318 5.64689 6.77217C5.89907 6.27115 6.3028 5.86241 6.80067 5.60408C7.29853 5.34575 7.86518 5.25098 8.42001 5.33325C8.98596 5.41718 9.50991 5.68089 9.91447 6.08546C10.319 6.49002 10.5828 7.01397 10.6667 7.57992Z"
+                      stroke="#F7FFE6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </svg>
+
+                Instagram</a>
+            </li>
+            <li>
+              <a href="#" class="w-fit flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Linkedin">
+                    <g>
                       <path
-                        id="Icon"
-                        d="M11.6667 4.33325H11.6733M4.66668 1.33325H11.3333C13.1743 1.33325 14.6667 2.82564 14.6667 4.66659V11.3333C14.6667 13.1742 13.1743 14.6666 11.3333 14.6666H4.66668C2.82573 14.6666 1.33334 13.1742 1.33334 11.3333V4.66659C1.33334 2.82564 2.82573 1.33325 4.66668 1.33325ZM10.6667 7.57992C10.749 8.13475 10.6542 8.7014 10.3958 9.19926C10.1375 9.69713 9.72877 10.1009 9.22776 10.353C8.72675 10.6052 8.15897 10.693 7.6052 10.6039C7.05143 10.5148 6.53985 10.2533 6.14324 9.85669C5.74662 9.46008 5.48516 8.9485 5.39605 8.39473C5.30695 7.84095 5.39472 7.27318 5.64689 6.77217C5.89907 6.27115 6.3028 5.86241 6.80067 5.60408C7.29853 5.34575 7.86518 5.25098 8.42001 5.33325C8.98596 5.41718 9.50991 5.68089 9.91447 6.08546C10.319 6.49002 10.5828 7.01397 10.6667 7.57992Z"
-                        stroke="#F7FFE6"
-                        stroke-width="1.6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
+                        d="M10.6667 5.33325C11.7275 5.33325 12.745 5.75468 13.4951 6.50482C14.2452 7.25497 14.6667 8.27239 14.6667 9.33325V13.9999H12V9.33325C12 8.97963 11.8595 8.64049 11.6095 8.39044C11.3594 8.14039 11.0203 7.99992 10.6667 7.99992C10.3131 7.99992 9.97392 8.14039 9.72387 8.39044C9.47382 8.64049 9.33334 8.97963 9.33334 9.33325V13.9999H6.66668V9.33325C6.66668 8.27239 7.0881 7.25497 7.83825 6.50482C8.58839 5.75468 9.60581 5.33325 10.6667 5.33325Z"
+                        stroke="#F7FFE6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M4.00001 5.99992H1.33334V13.9999H4.00001V5.99992Z" stroke="#F7FFE6" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M2.66668 3.99992C3.40306 3.99992 4.00001 3.40296 4.00001 2.66659C4.00001 1.93021 3.40306 1.33325 2.66668 1.33325C1.9303 1.33325 1.33334 1.93021 1.33334 2.66659C1.33334 3.40296 1.9303 3.99992 2.66668 3.99992Z"
+                        stroke="#F7FFE6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                     </g>
-                  </svg>
+                  </g>
+                </svg>
 
-                  Instagram</a
-                >
-              </li>
-              <li>
-                <a href="#" class="w-fit flex items-center gap-2">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g id="Linkedin">
-                      <g id="Icon">
-                        <path
-                          d="M10.6667 5.33325C11.7275 5.33325 12.745 5.75468 13.4951 6.50482C14.2452 7.25497 14.6667 8.27239 14.6667 9.33325V13.9999H12V9.33325C12 8.97963 11.8595 8.64049 11.6095 8.39044C11.3594 8.14039 11.0203 7.99992 10.6667 7.99992C10.3131 7.99992 9.97392 8.14039 9.72387 8.39044C9.47382 8.64049 9.33334 8.97963 9.33334 9.33325V13.9999H6.66668V9.33325C6.66668 8.27239 7.0881 7.25497 7.83825 6.50482C8.58839 5.75468 9.60581 5.33325 10.6667 5.33325Z"
-                          stroke="#F7FFE6"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M4.00001 5.99992H1.33334V13.9999H4.00001V5.99992Z"
-                          stroke="#F7FFE6"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M2.66668 3.99992C3.40306 3.99992 4.00001 3.40296 4.00001 2.66659C4.00001 1.93021 3.40306 1.33325 2.66668 1.33325C1.9303 1.33325 1.33334 1.93021 1.33334 2.66659C1.33334 3.40296 1.9303 3.99992 2.66668 3.99992Z"
-                          stroke="#F7FFE6"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </g>
-                    </g>
-                  </svg>
+                LinkedIn</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-                  LinkedIn</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <div class="w-full flex items-center justify-center md:justify-between md:flex-row flex-col gap-10">
+        <button
+          class="liquid_button text-(--color-background)! text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center">
+          Book a consultation
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g>
+              <path d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
+                stroke="var(--color-background)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+          </svg>
+        </button>
 
-        <div
-          class="w-full flex items-center justify-center md:justify-between md:flex-row flex-col gap-10"
-        >
-          <button
-            class="liquid_button text-(--color-background)! text-sm text-nowrap md:text-sm lg:text-lg h-fit flex gap-2 items-center justify-center"
-          >
-            Book a consultation
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="Arrow right">
-                <path
-                  id="Icon"
-                  d="M4.16666 9.99999H15.8333M15.8333 9.99999L9.99999 4.16666M15.8333 9.99999L9.99999 15.8333"
-                  stroke="var(--color-background)"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-            </svg>
-          </button>
+        <em class="text-center not-italic">2024 Catalyst Advisor. All rights reserved</em>
+      </div>
+    </section>
+  </footer>
 
-          <em class="text-center not-italic"
-            >2024 Catalyst Advisor. All rights reserved</em
-          >
-        </div>
-      </section>
-    </footer>
+  <script type="module" src="./assets/scripts/main.js"></script>
+</body>
 
-    <script type="module" src="./assets/scripts/main.js"></script>
-  </body>
 </html>

@@ -1,3 +1,3 @@
-import * as animations from './animations.js'
+import * as animations from './animations/index.js'
 
 animations.loadAnimations()
