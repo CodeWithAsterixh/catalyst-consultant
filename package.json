@@ -12,6 +12,6 @@
     "vite": "^6.0.0"
   },
   "dependencies": {
-    "motion-lyte.js": "^1.1.0"
+    "motion-lyte.js": "^1.1.1"
   }
 }
