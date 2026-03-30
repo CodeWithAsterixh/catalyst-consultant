@@ -1,3 +1,3 @@
-import * as animations from './animations/index.js'
+import { loadAnimations } from 'motion-lyte.js'
 
-animations.loadAnimations()
+loadAnimations()

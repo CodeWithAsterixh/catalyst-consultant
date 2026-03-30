@@ -4,10 +4,14 @@
   "description": "Expert Business Consulting Services",
   "type": "module",
   "scripts": {
-    "start": "npx serve ."
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
   },
   "dependencies": {
-    "motion-lyte.js": "file:../motion-lyte.js",
-    "serve": "^14.2.6"
+    "motion-lyte.js": "^1.1.0"
   }
 }
